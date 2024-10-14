@@ -1,2 +1,8 @@
-# Coaching-Tales
-Coaching Tales - Female Coaches in Football History
+# Coaching Tales
+
+## Tech Stack
+
+- Next.js
+- TypeScript
+- Husky
+- Vercel

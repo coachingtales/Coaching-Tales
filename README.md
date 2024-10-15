@@ -8,28 +8,33 @@
 - Vercel
 - Supabase
 
+### Project Overview: Celebrating Female Football Coaches
+This project aims to spotlight the inspiring stories of female football coaches, showcasing the significant impact they've had on the sport. By sharing their journeys, challenges, and successes, we hope to inspire the next generation, encouraging young girls to follow in their footsteps and pursue careers in football. Through this initiative, in collaboration with the National Football Museum in Manchester, we celebrate the contributions of these trailblazing women and motivate future athletes and coaches to continue breaking barriers in the sport.
+
+### Folder Structure
+- TypeScript
+- Husky
+- Vercel
+- Supabase
+
 ### Folder Structure
 ``` bash
 src/
 └── app/
     ├── bobbie_leigh/
     │   ├── culture/
-    │   │   └── page.tsx
+    │   │   ├── end_journey/
+    │   │   │   └── pdf/
+    │   │   ├── page_one/
+    │   │   ├── page_three/
+    │   │   └── page_two/
     │   └── football/
-    │       └── page.tsx
-    ├── irene_taylor/
-    │   ├── culture/
-    │   │   └── page.tsx
-    │   └── football/
-    │       └── page.tsx
-    ├── michele_robinson/
-    │   ├── culture/
-    │   │   └── page.tsx
-    │   └── football/
-    │       └── page.tsx
-    ├── pick_tale/
-    ├── globals.css
-    └── layout.tsx
+    │       ├── end_journey/
+    │       │   └── pdf/
+    │       ├── page_one/
+    │       ├── page_three/
+    │       └── page_two/
+    └── pick_tale/
 ```
 ### Getting Started
 

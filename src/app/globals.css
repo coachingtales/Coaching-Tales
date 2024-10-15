@@ -1,3 +1,12 @@
+@import url("https://use.typekit.net/uro8rxe.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*,
+*:before,
+*:after {
+  font-family: "area-normal", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

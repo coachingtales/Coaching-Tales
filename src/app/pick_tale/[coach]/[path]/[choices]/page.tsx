@@ -6,17 +6,49 @@ import coachData from "../../../../../../data/coachData.json";
 
 interface CoachDetails {
 	url: string;
-	component_2?: { transcript: string; title: string };
-	component_3?: { transcript: string; title: string };
-	component_4?: { transcript: string; title: string };
-	component_5?: { transcript: string; title: string };
-	component_6?: { transcript: string; title: string };
-	component_7?: { transcript: string; title: string };
+	component_2?: {
+		transcript: string;
+		title: string;
+		audio_file: string;
+		image_link: string;
+	};
+	component_3?: {
+		transcript: string;
+		title: string;
+		audio_file: string;
+		image_link: string;
+	};
+	component_4?: {
+		transcript: string;
+		title: string;
+		audio_file: string;
+		image_link: string;
+	};
+	component_5?: {
+		transcript: string;
+		title: string;
+		audio_file: string;
+		image_link: string;
+	};
+	component_6?: {
+		transcript: string;
+		title: string;
+		audio_file: string;
+		image_link: string;
+	};
+	component_7?: {
+		transcript: string;
+		title: string;
+		audio_file: string;
+		image_link: string;
+	};
 }
 
 const Choices: React.FC = () => {
 	const [details, setDetails] = useState("");
 	const [detailsTitle, setDetailsTitle] = useState("");
+	const [detailsAudio, setDetailsAudio] = useState("");
+	const [detailsImage, setDetailsImage] = useState("");
 	const { choices, coach, path } = useParams();
 
 	useEffect(() => {
@@ -29,11 +61,18 @@ const Choices: React.FC = () => {
 		if (!coachDetails) {
 			setDetails("Coach not found");
 			setDetailsTitle("");
+			setDetailsAudio("");
+			setDetailsImage("");
 			return;
 		}
 
 		const detailsMap: {
-			[key: string]: { transcript?: string; title?: string };
+			[key: string]: {
+				transcript?: string;
+				title?: string;
+				audio_file?: string;
+				image_link?: string;
+			};
 		} = {
 			irene_taylor_choice_1_Football: coachDetails.component_4 || {},
 			irene_taylor_choice_2_Football: coachDetails.component_5 || {},
@@ -53,10 +92,14 @@ const Choices: React.FC = () => {
 		const selectedDetails = detailsMap[key] || {
 			transcript: "No details found",
 			title: "",
+			audio_file: "",
+			image_link: "",
 		};
 
 		setDetails(selectedDetails.transcript || "");
 		setDetailsTitle(selectedDetails.title || "");
+		setDetailsAudio(selectedDetails.audio_file || "");
+		setDetailsImage(selectedDetails.image_link || "");
 	}, [coach, choices, path]);
 
 	if (!coach) {
@@ -84,6 +127,8 @@ const Choices: React.FC = () => {
 			<h2 className="text-2xl">{detailsTitle}</h2>
 			<br />
 			<p>{details}</p>
+			<p>Audio: {detailsAudio}</p>
+			<p>Image: {detailsImage}</p>
 			<br />
 			<Link href={`/pick_tale/${coach}/${path}/${choices}/end`}>End</Link>
 		</div>

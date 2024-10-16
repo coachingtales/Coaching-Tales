@@ -6,21 +6,12 @@ import coachData from "../../../../../../data/coachData.json";
 
 interface CoachDetails {
 	url: string;
-	goalkeeping?: { transcript: string; title: string };
-	the_throw_in?: { transcript: string; title: string };
-	women_in_interwar_britain?: { transcript: string; title: string };
-	sport_in_interwar_britain?: { transcript: string; title: string };
-	the_header?: { transcript: string; title: string };
-	the_1960s_fa_rulebook?: { transcript: string; title: string };
-	youth_clubs_in_1960s_britain?: { transcript: string; title: string };
-	women_in_1960s_britain?: { transcript: string; title: string };
-	football_coaching_qualifications?: { transcript: string; title: string };
-	developing_football_in_the_1980s?: { transcript: string; title: string };
-	employment_choices_for_women_in_1970s_britain?: {
-		transcript: string;
-		title: string;
-	};
-	region?: { transcript: string; title: string };
+	component_2?: { transcript: string; title: string };
+	component_3?: { transcript: string; title: string };
+	component_4?: { transcript: string; title: string };
+	component_5?: { transcript: string; title: string };
+	component_6?: { transcript: string; title: string };
+	component_7?: { transcript: string; title: string };
 }
 
 const Choices: React.FC = () => {
@@ -44,24 +35,18 @@ const Choices: React.FC = () => {
 		const detailsMap: {
 			[key: string]: { transcript?: string; title?: string };
 		} = {
-			irene_taylor_choice_1_Football: coachDetails.goalkeeping || {},
-			irene_taylor_choice_2_Football: coachDetails.the_throw_in || {},
-			irene_taylor_choice_1_Culture:
-				coachDetails.women_in_interwar_britain || {},
-			irene_taylor_choice_2_Culture:
-				coachDetails.sport_in_interwar_britain || {},
-			bobbie_leigh_choice_1_Football: coachDetails.the_header || {},
-			bobbie_leigh_choice_2_Football: coachDetails.the_1960s_fa_rulebook || {},
-			bobbie_leigh_choice_1_Culture:
-				coachDetails.youth_clubs_in_1960s_britain || {},
-			bobbie_leigh_choice_2_Culture: coachDetails.women_in_1960s_britain || {},
-			michele_robinson_choice_1_Football:
-				coachDetails.football_coaching_qualifications || {},
-			michele_robinson_choice_2_Football:
-				coachDetails.developing_football_in_the_1980s || {},
-			michele_robinson_choice_1_Culture:
-				coachDetails.employment_choices_for_women_in_1970s_britain || {},
-			michele_robinson_choice_2_Culture: coachDetails.region || {},
+			irene_taylor_choice_1_Football: coachDetails.component_4 || {},
+			irene_taylor_choice_2_Football: coachDetails.component_5 || {},
+			irene_taylor_choice_1_Culture: coachDetails.component_6 || {},
+			irene_taylor_choice_2_Culture: coachDetails.component_7 || {},
+			bobbie_leigh_choice_1_Football: coachDetails.component_4 || {},
+			bobbie_leigh_choice_2_Football: coachDetails.component_5 || {},
+			bobbie_leigh_choice_1_Culture: coachDetails.component_6 || {},
+			bobbie_leigh_choice_2_Culture: coachDetails.component_7 || {},
+			michele_robinson_choice_1_Football: coachDetails.component_4 || {},
+			michele_robinson_choice_2_Football: coachDetails.component_5 || {},
+			michele_robinson_choice_1_Culture: coachDetails.component_6 || {},
+			michele_robinson_choice_2_Culture: coachDetails.component_7 || {},
 		};
 
 		const key = `${coach}_${choices}_${path}`;

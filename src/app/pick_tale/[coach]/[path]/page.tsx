@@ -12,19 +12,27 @@ interface KeyFacts {
 interface CoachDetails {
 	name: string;
 	url: string;
-	football_coaching?: {
+	component_2?: {
 		transcript: string;
 		title: string;
 	};
-	life_in_interwar_britain?: {
+	component_3?: {
 		transcript: string;
 		title: string;
 	};
-	growing_up_in_1960s_britain?: {
+	component_4?: {
 		transcript: string;
 		title: string;
 	};
-	growing_up_in_britain_in_the_1960s_and_1970s?: {
+	component_5?: {
+		transcript: string;
+		title: string;
+	};
+	component_6?: {
+		transcript: string;
+		title: string;
+	};
+	component_7?: {
 		transcript: string;
 		title: string;
 	};
@@ -51,13 +59,12 @@ const Path: React.FC = () => {
 		const detailsMap: {
 			[key: string]: { transcript?: string; title?: string };
 		} = {
-			irene_taylor_Football: coachDetails.football_coaching || {},
-			irene_taylor_Other: coachDetails.life_in_interwar_britain || {},
-			bobbie_leigh_Football: coachDetails.football_coaching || {},
-			bobbie_leigh_Other: coachDetails.growing_up_in_1960s_britain || {},
-			michele_robinson_Football: coachDetails.football_coaching || {},
-			michele_robinson_Other:
-				coachDetails.growing_up_in_britain_in_the_1960s_and_1970s || {},
+			irene_taylor_Football: coachDetails.component_2 || {},
+			irene_taylor_Other: coachDetails.component_3 || {},
+			bobbie_leigh_Football: coachDetails.component_2 || {},
+			bobbie_leigh_Other: coachDetails.component_3 || {},
+			michele_robinson_Football: coachDetails.component_2 || {},
+			michele_robinson_Other: coachDetails.component_3 || {},
 		};
 
 		const key = `${coach}_${path === "Football" ? "Football" : "Other"}`;

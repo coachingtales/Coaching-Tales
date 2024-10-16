@@ -17,25 +17,6 @@ This project aims to spotlight the inspiring stories of female football coaches,
 - Vercel
 - Supabase
 
-### Folder Structure
-``` bash
-src/
-└── app/
-    ├── bobbie_leigh/
-    │   ├── culture/
-    │   │   ├── end_journey/
-    │   │   │   └── pdf/
-    │   │   ├── page_one/
-    │   │   ├── page_three/
-    │   │   └── page_two/
-    │   └── football/
-    │       ├── end_journey/
-    │       │   └── pdf/
-    │       ├── page_one/
-    │       ├── page_three/
-    │       └── page_two/
-    └── pick_tale/
-```
 ### Getting Started
 
 ``` bash

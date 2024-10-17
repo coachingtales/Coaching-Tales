@@ -15,32 +15,46 @@ interface CoachDetails {
 	component_2?: {
 		transcript: string;
 		title: string;
+		audio_file: string;
+		image_link: string;
 	};
 	component_3?: {
 		transcript: string;
 		title: string;
+		audio_file: string;
+		image_link: string;
 	};
 	component_4?: {
 		transcript: string;
 		title: string;
+		audio_file: string;
+		image_link: string;
 	};
 	component_5?: {
 		transcript: string;
 		title: string;
+		audio_file: string;
+		image_link: string;
 	};
 	component_6?: {
 		transcript: string;
 		title: string;
+		audio_file: string;
+		image_link: string;
 	};
 	component_7?: {
 		transcript: string;
 		title: string;
+		audio_file: string;
+		image_link: string;
 	};
 }
 
 const Path: React.FC = () => {
 	const [details, setDetails] = useState("");
 	const [detailsTitle, setDetailsTitle] = useState("");
+	const [detailsAudio, setDetailsAudio] = useState("");
+	const [detailsImage, setDetailsImage] = useState("");
 	const { coach, path } = useParams();
 
 	useEffect(() => {
@@ -53,28 +67,26 @@ const Path: React.FC = () => {
 		if (!coachDetails) {
 			setDetails("Coach not found");
 			setDetailsTitle("");
+			setDetailsAudio("");
+			setDetailsImage("");
 			return;
 		}
 
-		const detailsMap: {
-			[key: string]: { transcript?: string; title?: string };
-		} = {
-			irene_taylor_Football: coachDetails.component_2 || {},
-			irene_taylor_Other: coachDetails.component_3 || {},
-			bobbie_leigh_Football: coachDetails.component_2 || {},
-			bobbie_leigh_Other: coachDetails.component_3 || {},
-			michele_robinson_Football: coachDetails.component_2 || {},
-			michele_robinson_Other: coachDetails.component_3 || {},
-		};
+		const selectedDetails =
+			path === "Football" ? coachDetails.component_2 : coachDetails.component_3;
 
-		const key = `${coach}_${path === "Football" ? "Football" : "Other"}`;
-		const selectedDetails = detailsMap[key] || {
-			transcript: "No details found",
-			title: "",
-		};
+		if (!selectedDetails) {
+			setDetails("No details found");
+			setDetailsTitle("");
+			setDetailsAudio("");
+			setDetailsImage("");
+			return;
+		}
 
 		setDetails(selectedDetails.transcript || "");
 		setDetailsTitle(selectedDetails.title || "");
+		setDetailsAudio(selectedDetails.audio_file || "");
+		setDetailsImage(selectedDetails.image_link || "");
 	}, [coach, path]);
 
 	if (!coach) {
@@ -94,6 +106,8 @@ const Path: React.FC = () => {
 			<h1 className="text-4xl font-bold underline">{coachDetails.name}</h1>
 			<h2 className="text-2xl mt-4">{detailsTitle}</h2>
 			<p className="mt-4">{details}</p>
+			<p>Audio: {detailsAudio}</p>
+			<p>Image: {detailsImage}</p>
 			<ul className="mt-4 space-y-2">
 				<li>
 					<Link href={`/pick_tale/${coach}/${path}/choice_1`}>choice 1</Link>

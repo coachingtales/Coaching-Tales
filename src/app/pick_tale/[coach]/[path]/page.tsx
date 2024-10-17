@@ -2,12 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import coachData from "../../../../../data/coachData.json";
-
-interface KeyFacts {
-	born?: string;
-	location: string;
-}
+import coachData from "@/app/data/coachData.json";
 
 interface CoachDetails {
 	name: string;

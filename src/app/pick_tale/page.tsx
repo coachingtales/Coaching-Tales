@@ -1,5 +1,5 @@
 import Link from "next/link";
-import coachData from "../../../data/coachData.json";
+import coachData from "@/app/data/coachData.json";
 
 interface Coach {
 	name: string;

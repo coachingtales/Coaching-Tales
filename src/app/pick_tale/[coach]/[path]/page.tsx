@@ -72,27 +72,16 @@ const Path: React.FC = () => {
 			return;
 		}
 
-		const detailsMap: {
-			[key: string]: {
-				transcript?: string;
-				title?: string;
-				audio_file?: string;
-				image_link?: string;
-			};
-		} = {
-			irene_taylor_Football: coachDetails.component_2 || {},
-			irene_taylor_Other: coachDetails.component_3 || {},
-			bobbie_leigh_Football: coachDetails.component_2 || {},
-			bobbie_leigh_Other: coachDetails.component_3 || {},
-			michele_robinson_Football: coachDetails.component_2 || {},
-			michele_robinson_Other: coachDetails.component_3 || {},
-		};
+		const selectedDetails =
+			path === "Football" ? coachDetails.component_2 : coachDetails.component_3;
 
-		const key = `${coach}_${path === "Football" ? "Football" : "Other"}`;
-		const selectedDetails = detailsMap[key] || {
-			transcript: "No details found",
-			title: "",
-		};
+		if (!selectedDetails) {
+			setDetails("No details found");
+			setDetailsTitle("");
+			setDetailsAudio("");
+			setDetailsImage("");
+			return;
+		}
 
 		setDetails(selectedDetails.transcript || "");
 		setDetailsTitle(selectedDetails.title || "");

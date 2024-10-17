@@ -66,35 +66,31 @@ const Choices: React.FC = () => {
 			return;
 		}
 
-		const detailsMap: {
-			[key: string]: {
-				transcript?: string;
-				title?: string;
-				audio_file?: string;
-				image_link?: string;
-			};
-		} = {
-			irene_taylor_choice_1_Football: coachDetails.component_4 || {},
-			irene_taylor_choice_2_Football: coachDetails.component_5 || {},
-			irene_taylor_choice_1_Culture: coachDetails.component_6 || {},
-			irene_taylor_choice_2_Culture: coachDetails.component_7 || {},
-			bobbie_leigh_choice_1_Football: coachDetails.component_4 || {},
-			bobbie_leigh_choice_2_Football: coachDetails.component_5 || {},
-			bobbie_leigh_choice_1_Culture: coachDetails.component_6 || {},
-			bobbie_leigh_choice_2_Culture: coachDetails.component_7 || {},
-			michele_robinson_choice_1_Football: coachDetails.component_4 || {},
-			michele_robinson_choice_2_Football: coachDetails.component_5 || {},
-			michele_robinson_choice_1_Culture: coachDetails.component_6 || {},
-			michele_robinson_choice_2_Culture: coachDetails.component_7 || {},
+		let selectedDetails: {
+			transcript: string;
+			title: string;
+			audio_file: string;
+			image_link: string;
 		};
+		if (path === "Football") {
+			selectedDetails =
+				choices === "choice_1"
+					? coachDetails.component_4
+					: coachDetails.component_5;
+		} else {
+			selectedDetails =
+				choices === "choice_1"
+					? coachDetails.component_6
+					: coachDetails.component_7;
+		}
 
-		const key = `${coach}_${choices}_${path}`;
-		const selectedDetails = detailsMap[key] || {
-			transcript: "No details found",
-			title: "",
-			audio_file: "",
-			image_link: "",
-		};
+		if (!selectedDetails) {
+			setDetails("No details found");
+			setDetailsTitle("");
+			setDetailsAudio("");
+			setDetailsImage("");
+			return;
+		}
 
 		setDetails(selectedDetails.transcript || "");
 		setDetailsTitle(selectedDetails.title || "");

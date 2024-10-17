@@ -3,47 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import coachData from "@/app/data/coachData.json";
-
-interface CoachDetails {
-	name: string;
-	url: string;
-	component_2?: {
-		transcript: string;
-		title: string;
-		audio_file: string;
-		image_link: string;
-	};
-	component_3?: {
-		transcript: string;
-		title: string;
-		audio_file: string;
-		image_link: string;
-	};
-	component_4?: {
-		transcript: string;
-		title: string;
-		audio_file: string;
-		image_link: string;
-	};
-	component_5?: {
-		transcript: string;
-		title: string;
-		audio_file: string;
-		image_link: string;
-	};
-	component_6?: {
-		transcript: string;
-		title: string;
-		audio_file: string;
-		image_link: string;
-	};
-	component_7?: {
-		transcript: string;
-		title: string;
-		audio_file: string;
-		image_link: string;
-	};
-}
+import type { CoachComponents } from "@/app/interfaces/CoachDetails";
 
 const Path: React.FC = () => {
 	const [details, setDetails] = useState("");
@@ -56,7 +16,7 @@ const Path: React.FC = () => {
 		if (!coach) return;
 
 		const coachDetails = coachData.details.find(
-			(coachURL: CoachDetails) => coachURL.url === coach,
+			(coachURL: CoachComponents) => coachURL.url === coach,
 		);
 
 		if (!coachDetails) {
@@ -89,7 +49,7 @@ const Path: React.FC = () => {
 	}
 
 	const coachDetails = coachData.details.find(
-		(coachURL: CoachDetails) => coachURL.url === coach,
+		(coachURL: CoachComponents) => coachURL.url === coach,
 	);
 
 	if (!coachDetails) {

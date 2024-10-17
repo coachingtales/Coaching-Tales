@@ -2,17 +2,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import coachData from "@/app/data/coachData.json";
-
-interface KeyFacts {
-	born?: string;
-	location: string;
-}
-
-interface CoachDetails {
-	name: string;
-	url: string;
-	key_facts: KeyFacts;
-}
+import type { CoachName } from "@/app/interfaces/CoachDetails";
 
 const CoachDetailsPage: React.FC = () => {
 	const { coach } = useParams();
@@ -22,7 +12,7 @@ const CoachDetailsPage: React.FC = () => {
 	}
 
 	const coachDetails = coachData.details.find(
-		(coachURL: CoachDetails) => coachURL.url === coach,
+		(coachURL: CoachName) => coachURL.url === coach,
 	);
 
 	if (!coachDetails) {

@@ -4,20 +4,9 @@ import coachData from "@/app/data/coachData.json";
 import type {
 	CoachComponents,
 	ComponentDetails,
+	UseCoachDetailsParams,
+	UseCoachDetailsResult,
 } from "@/app/interfaces/CoachDetails";
-
-interface UseCoachDetailsParams {
-	coach: string | undefined;
-	path: string | undefined;
-	choices?: string | undefined;
-}
-
-interface UseCoachDetailsResult {
-	details: string;
-	detailsTitle: string;
-	detailsAudio: string;
-	detailsImage: string;
-}
 
 const useCoachDetails = ({
 	coach,
@@ -28,6 +17,10 @@ const useCoachDetails = ({
 	const [detailsTitle, setDetailsTitle] = useState("");
 	const [detailsAudio, setDetailsAudio] = useState("");
 	const [detailsImage, setDetailsImage] = useState("");
+	const [name, setName] = useState("");
+	const [born, setBorn] = useState("");
+	const [active, setActive] = useState("");
+	const [location, setLocation] = useState("");
 
 	useEffect(() => {
 		if (!coach) return;
@@ -41,8 +34,17 @@ const useCoachDetails = ({
 			setDetailsTitle("");
 			setDetailsAudio("");
 			setDetailsImage("");
+			setName("");
+			setBorn("");
+			setActive("");
+			setLocation("");
 			return;
 		}
+
+		setName(coachDetails.name);
+		setBorn(coachDetails.key_facts.born || "");
+		setActive(coachDetails.key_facts.active);
+		setLocation(coachDetails.key_facts.location);
 
 		let selectedDetails: ComponentDetails | undefined;
 
@@ -80,7 +82,16 @@ const useCoachDetails = ({
 		setDetailsImage(selectedDetails.image_link || "");
 	}, [coach, path, choices]);
 
-	return { details, detailsTitle, detailsAudio, detailsImage };
+	return {
+		details,
+		detailsTitle,
+		detailsAudio,
+		detailsImage,
+		name,
+		born,
+		active,
+		location,
+	};
 };
 
 export default useCoachDetails;

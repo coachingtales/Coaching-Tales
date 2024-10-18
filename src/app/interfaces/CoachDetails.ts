@@ -1,5 +1,25 @@
+export interface UseCoachDetailsParams {
+	coach: string | undefined;
+	path: string | undefined;
+	choices?: string | undefined;
+}
+
+export interface UseCoachDetailsResult {
+	details: string;
+	detailsTitle: string;
+	detailsAudio: string;
+	detailsImage: string;
+	name: string;
+	born: string;
+	active: string;
+	location: string;
+}
+
 export interface CoachComponents {
 	url: string;
+	component_1?: {
+		image_link: string;
+	};
 	component_2?: {
 		transcript: string;
 		title: string;

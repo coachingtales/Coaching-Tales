@@ -6,12 +6,19 @@ import useCoachDetails from "@/app/hooks/useCoachDetails";
 
 const Path: React.FC = () => {
 	const { coach, path } = useParams();
-	const { details, detailsTitle, detailsAudio, detailsImage, name } =
+	const { details, detailsTitle, detailsAudio, detailsImage, name, PDF } =
 		useCoachDetails({ coach, path } as { coach: string; path: string });
 
 	if (!coach) {
 		return <div>Loading...</div>;
 	}
+
+	const coachChoice1 = PDF.component_choice_1
+		? PDF.component_choice_1.title
+		: "";
+	const coachChoice2 = PDF.component_choice_2
+		? PDF.component_choice_2.title
+		: "";
 
 	return (
 		<div className="w-dvw h-dvh grid place-content-center p-5">
@@ -22,10 +29,14 @@ const Path: React.FC = () => {
 			<p>{detailsImage}</p>
 			<ul className="mt-4 space-y-2">
 				<li>
-					<Link href={`/pick_tale/${coach}/${path}/choice_1`}>choice 1</Link>
+					<Link href={`/pick_tale/${coach}/${path}/choice_1`}>
+						{coachChoice1}
+					</Link>
 				</li>
 				<li>
-					<Link href={`/pick_tale/${coach}/${path}/choice_2`}>choice 2</Link>
+					<Link href={`/pick_tale/${coach}/${path}/choice_2`}>
+						{coachChoice2}
+					</Link>
 				</li>
 			</ul>
 		</div>

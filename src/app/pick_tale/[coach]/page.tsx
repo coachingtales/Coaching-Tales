@@ -2,11 +2,10 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import useCoachDetails from "@/app/hooks/useCoachDetails";
-import Image from "next/image";
 
 const CoachDetailsPage: React.FC = () => {
 	const { coach, path } = useParams();
-	const { detailsImage, name, born, active, location } = useCoachDetails({
+	const { name, born, active, location } = useCoachDetails({
 		coach,
 		path,
 	} as {
@@ -37,16 +36,6 @@ const CoachDetailsPage: React.FC = () => {
 					<Link href={`/pick_tale/${coach}/Culture`}>Culture</Link>
 				</li>
 			</ul>
-			{detailsImage && (
-				<div className="w-80 object-cover overflow-hidden aspect-square">
-					<Image
-						src={detailsImage}
-						alt="Coach image"
-						width={500}
-						height={500}
-					/>
-				</div>
-			)}
 		</div>
 	);
 };

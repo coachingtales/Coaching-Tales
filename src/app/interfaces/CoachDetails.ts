@@ -13,6 +13,7 @@ export interface UseCoachDetailsResult {
 	born: string;
 	active: string;
 	location: string;
+	PDF: Record<string, ComponentDetails>;
 }
 
 export interface CoachComponents {

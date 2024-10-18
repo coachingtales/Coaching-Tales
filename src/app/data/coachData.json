@@ -133,6 +133,15 @@
 				"audio_file": "Audio File Link Here",
 				"image_link": "Image File Link Here"
 			}
+		},
+		{
+			"name": "Margot Robbie",
+			"url": "margot_robbie",
+			"key_facts": {
+				"born": "...don't ask a lady her name",
+				"active": "2024",
+				"location": "Barbie Dreamhouse, Malibu, California"
+			}
 		}
 	]
 }

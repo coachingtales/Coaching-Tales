@@ -1,5 +1,8 @@
 export interface CoachComponents {
 	url: string;
+	component_1?: {
+		image_link: string;
+	};
 	component_2?: {
 		transcript: string;
 		title: string;

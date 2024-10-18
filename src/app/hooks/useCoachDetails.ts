@@ -17,6 +17,10 @@ interface UseCoachDetailsResult {
 	detailsTitle: string;
 	detailsAudio: string;
 	detailsImage: string;
+	name: string;
+	born: string;
+	active: string;
+	location: string;
 }
 
 const useCoachDetails = ({
@@ -28,6 +32,10 @@ const useCoachDetails = ({
 	const [detailsTitle, setDetailsTitle] = useState("");
 	const [detailsAudio, setDetailsAudio] = useState("");
 	const [detailsImage, setDetailsImage] = useState("");
+	const [name, setName] = useState("");
+	const [born, setBorn] = useState("");
+	const [active, setActive] = useState("");
+	const [location, setLocation] = useState("");
 
 	useEffect(() => {
 		if (!coach) return;
@@ -41,8 +49,17 @@ const useCoachDetails = ({
 			setDetailsTitle("");
 			setDetailsAudio("");
 			setDetailsImage("");
+			setName("");
+			setBorn("");
+			setActive("");
+			setLocation("");
 			return;
 		}
+
+		setName(coachDetails.name);
+		setBorn(coachDetails.key_facts.born || "");
+		setActive(coachDetails.key_facts.active);
+		setLocation(coachDetails.key_facts.location);
 
 		let selectedDetails: ComponentDetails | undefined;
 
@@ -80,7 +97,16 @@ const useCoachDetails = ({
 		setDetailsImage(selectedDetails.image_link || "");
 	}, [coach, path, choices]);
 
-	return { details, detailsTitle, detailsAudio, detailsImage };
+	return {
+		details,
+		detailsTitle,
+		detailsAudio,
+		detailsImage,
+		name,
+		born,
+		active,
+		location,
+	};
 };
 
 export default useCoachDetails;

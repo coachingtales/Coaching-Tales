@@ -6,13 +6,12 @@ import useCoachDetails from "@/app/hooks/useCoachDetails";
 
 const Choices: React.FC = () => {
 	const { choices, coach, path } = useParams();
-	const { details, detailsTitle, detailsAudio, detailsImage } = useCoachDetails(
-		{ coach, path, choices } as {
+	const { details, detailsTitle, detailsAudio, detailsImage, name } =
+		useCoachDetails({ coach, path, choices } as {
 			coach: string;
 			path: string;
 			choices: string;
-		},
-	);
+		});
 
 	if (!coach) {
 		return <div>Loading...</div>;
@@ -20,13 +19,7 @@ const Choices: React.FC = () => {
 
 	return (
 		<div className="w-dvw h-dvh grid place-content-center p-5">
-			<h1 className="text-4xl font-bold underline">
-				{coach}
-				<br />
-				{path}
-				<br />
-				{choices}
-			</h1>
+			<h1 className="text-4xl font-bold underline">{name}</h1>
 			<br />
 			<h2 className="text-2xl">{detailsTitle}</h2>
 			<br />

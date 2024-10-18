@@ -27,7 +27,7 @@ const Choices: React.FC = () => {
 			<p>{detailsAudio}</p>
 			<p>{detailsImage}</p>
 			<br />
-			<Link href={`/pick_tale/${coach}/${path}/${choices}/end`}>End</Link>
+			<Link href={`/${coach}/${path}/${choices}/end`}>End</Link>
 		</div>
 	);
 };

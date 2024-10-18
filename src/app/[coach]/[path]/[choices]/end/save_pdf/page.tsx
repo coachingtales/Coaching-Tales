@@ -2,7 +2,6 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import useCoachDetails from "@/app/hooks/useCoachDetails";
-import { act } from "react";
 
 const SavePDF: React.FC = () => {
 	const { choices, coach, path } = useParams();

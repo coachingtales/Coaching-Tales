@@ -3,6 +3,7 @@
 		{
 			"name": "Irene Taylor",
 			"url": "irene_taylor",
+			"id": 1,
 			"key_facts": {
 				"born": "17 Jul 1905",
 				"active": "Between the Wars",
@@ -51,6 +52,7 @@
 		{
 			"name": "Bobbie Leigh",
 			"url": "bobbie_leigh",
+			"id": 2,
 			"key_facts": {
 				"active": "1968",
 				"location": "Cheshire, England, UK"
@@ -98,6 +100,7 @@
 		{
 			"name": "Michele Robinson",
 			"url": "michele_robinson",
+			"id": 3,
 			"key_facts": {
 				"born": "29 Oct 1961",
 				"active": "1980s",

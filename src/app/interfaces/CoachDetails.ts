@@ -1,7 +1,9 @@
 export interface UseCoachDetailsParams {
-	coach: string | undefined;
-	path: string | undefined;
+	coach?: string | undefined;
+	path?: string | undefined;
 	choices?: string | undefined;
+	nameCoach?: string | undefined;
+	urlCoach?: string | undefined;
 }
 
 export interface UseCoachDetailsResult {

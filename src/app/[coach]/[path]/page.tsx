@@ -29,14 +29,10 @@ const Path: React.FC = () => {
 			<p>{detailsImage}</p>
 			<ul className="mt-4 space-y-2">
 				<li>
-					<Link href={`/pick_tale/${coach}/${path}/choice_1`}>
-						{coachChoice1}
-					</Link>
+					<Link href={`/${coach}/${path}/choice_1`}>{coachChoice1}</Link>
 				</li>
 				<li>
-					<Link href={`/pick_tale/${coach}/${path}/choice_2`}>
-						{coachChoice2}
-					</Link>
+					<Link href={`/${coach}/${path}/choice_2`}>{coachChoice2}</Link>
 				</li>
 			</ul>
 		</div>

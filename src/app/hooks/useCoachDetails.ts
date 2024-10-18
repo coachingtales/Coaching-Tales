@@ -21,6 +21,7 @@ const useCoachDetails = ({
 	const [born, setBorn] = useState("");
 	const [active, setActive] = useState("");
 	const [location, setLocation] = useState("");
+	const [color, setColor] = useState("");
 	const [PDF, setPDF] = useState<Record<string, ComponentDetails>>({});
 
 	useEffect(() => {
@@ -40,6 +41,7 @@ const useCoachDetails = ({
 			setActive("");
 			setLocation("");
 			setPDF({});
+			setColor("");
 			return;
 		}
 
@@ -47,6 +49,7 @@ const useCoachDetails = ({
 		setBorn(coachDetails.key_facts.born || "");
 		setActive(coachDetails.key_facts.active);
 		setLocation(coachDetails.key_facts.location);
+		setColor(coachDetails.hex);
 
 		let selectedDetails: ComponentDetails | undefined;
 		let PDF: Record<string, ComponentDetails> = {};
@@ -127,6 +130,7 @@ const useCoachDetails = ({
 		active,
 		location,
 		PDF,
+		color,
 	};
 };
 

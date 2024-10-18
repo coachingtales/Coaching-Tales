@@ -6,8 +6,15 @@ import useCoachDetails from "@/app/hooks/useCoachDetails";
 
 const Path: React.FC = () => {
 	const { coach, path } = useParams();
-	const { details, detailsTitle, detailsAudio, detailsImage, name, PDF } =
-		useCoachDetails({ coach, path } as { coach: string; path: string });
+	const {
+		details,
+		detailsTitle,
+		detailsAudio,
+		detailsImage,
+		name,
+		PDF,
+		color,
+	} = useCoachDetails({ coach, path } as { coach: string; path: string });
 
 	if (!coach) {
 		return <div>Loading...</div>;
@@ -21,7 +28,10 @@ const Path: React.FC = () => {
 		: "";
 
 	return (
-		<div className="w-dvw h-dvh grid place-content-center p-5">
+		<div
+			className="w-dvw h-dvh grid place-content-center p-5"
+			style={{ background: `${color}` }}
+		>
 			<h1 className="text-4xl font-bold underline">{name}</h1>
 			<h2 className="text-2xl mt-4">{detailsTitle}</h2>
 			<p className="mt-4">{details}</p>

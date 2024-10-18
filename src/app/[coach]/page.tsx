@@ -11,7 +11,7 @@ const CoachDetailsPage: React.FC = () => {
 
 	const coachesUrl = coachData.details[id].url;
 
-	const { name, born, active, location } = useCoachDetails({
+	const { name, born, active, location, color } = useCoachDetails({
 		coach: coachesUrl,
 	} as {
 		coach: string;
@@ -34,7 +34,10 @@ const CoachDetailsPage: React.FC = () => {
 	}
 
 	return (
-		<div className="w-dvw h-dvh grid place-content-center">
+		<div
+			className="w-dvw h-dvh grid place-content-center text-slate-50 transition-all duration-300"
+			style={{ background: `${color}` }}
+		>
 			{name && <h1 className="text-4xl font-bold underline">{name}</h1>}
 			{!name && (
 				<h1 className="text-4xl font-bold underline">No Coach found</h1>

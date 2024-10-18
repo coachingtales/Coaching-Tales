@@ -5,7 +5,7 @@ import useCoachDetails from "@/app/hooks/useCoachDetails";
 
 const SavePDF: React.FC = () => {
 	const { choices, coach, path } = useParams();
-	const { name, PDF, born, active, location } = useCoachDetails({
+	const { name, PDF, born, active, location, color } = useCoachDetails({
 		coach,
 		path,
 		choices,
@@ -28,7 +28,10 @@ const SavePDF: React.FC = () => {
 		PDF.component_choice?.transcript || "No transcript available";
 
 	return (
-		<div className="w-dvw h-dvh grid place-content-center p-5">
+		<div
+			className="w-dvw h-dvh grid place-content-center p-5"
+			style={{ background: `${color}` }}
+		>
 			<h1 className="text-4xl font-bold underline">{name}</h1>
 			<ul>
 				<li>{born ? `Born: ${born}` : ""}</li>

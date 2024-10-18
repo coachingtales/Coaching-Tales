@@ -1,7 +1,10 @@
 export interface UseCoachDetailsParams {
-	coach: string | undefined;
-	path: string | undefined;
+	coach?: string | undefined;
+	path?: string | undefined;
 	choices?: string | undefined;
+	nameCoach?: string | undefined;
+	urlCoach?: string | undefined;
+	color?: string | undefined;
 }
 
 export interface UseCoachDetailsResult {
@@ -13,6 +16,8 @@ export interface UseCoachDetailsResult {
 	born: string;
 	active: string;
 	location: string;
+	PDF: Record<string, ComponentDetails>;
+	color: string;
 }
 
 export interface CoachComponents {

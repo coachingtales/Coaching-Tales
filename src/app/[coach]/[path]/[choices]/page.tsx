@@ -6,7 +6,7 @@ import useCoachDetails from "@/app/hooks/useCoachDetails";
 
 const Choices: React.FC = () => {
 	const { choices, coach, path } = useParams();
-	const { details, detailsTitle, detailsAudio, detailsImage, name } =
+	const { details, detailsTitle, detailsAudio, detailsImage, name, color } =
 		useCoachDetails({ coach, path, choices } as {
 			coach: string;
 			path: string;
@@ -18,7 +18,10 @@ const Choices: React.FC = () => {
 	}
 
 	return (
-		<div className="w-dvw h-dvh grid place-content-center p-5">
+		<div
+			className="w-dvw h-dvh grid place-content-center p-5"
+			style={{ background: `${color}` }}
+		>
 			<h1 className="text-4xl font-bold underline">{name}</h1>
 			<br />
 			<h2 className="text-2xl">{detailsTitle}</h2>
@@ -27,7 +30,7 @@ const Choices: React.FC = () => {
 			<p>{detailsAudio}</p>
 			<p>{detailsImage}</p>
 			<br />
-			<Link href={`/pick_tale/${coach}/${path}/${choices}/end`}>End</Link>
+			<Link href={`/${coach}/${path}/${choices}/end`}>End</Link>
 		</div>
 	);
 };

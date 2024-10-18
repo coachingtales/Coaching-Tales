@@ -4,24 +4,9 @@ import coachData from "@/app/data/coachData.json";
 import type {
 	CoachComponents,
 	ComponentDetails,
+	UseCoachDetailsParams,
+	UseCoachDetailsResult,
 } from "@/app/interfaces/CoachDetails";
-
-interface UseCoachDetailsParams {
-	coach: string | undefined;
-	path: string | undefined;
-	choices?: string | undefined;
-}
-
-interface UseCoachDetailsResult {
-	details: string;
-	detailsTitle: string;
-	detailsAudio: string;
-	detailsImage: string;
-	name: string;
-	born: string;
-	active: string;
-	location: string;
-}
 
 const useCoachDetails = ({
 	coach,

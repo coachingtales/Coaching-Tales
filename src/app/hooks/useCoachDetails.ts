@@ -32,7 +32,7 @@ const useCoachDetails = ({
 		);
 
 		if (!coachDetails) {
-			setDetails("Coach not found");
+			setDetails("");
 			setDetailsTitle("");
 			setDetailsAudio("");
 			setDetailsImage("");
@@ -45,11 +45,11 @@ const useCoachDetails = ({
 			return;
 		}
 
-		setName(coachDetails.name);
+		setName(coachDetails.name || "");
 		setBorn(coachDetails.key_facts.born || "");
-		setActive(coachDetails.key_facts.active);
-		setLocation(coachDetails.key_facts.location);
-		setColor(coachDetails.hex);
+		setActive(coachDetails.key_facts.active || "");
+		setLocation(coachDetails.key_facts.location || "");
+		setColor(coachDetails.hex || "");
 
 		let selectedDetails: ComponentDetails | undefined;
 		let PDF: Record<string, ComponentDetails> = {};
@@ -105,7 +105,7 @@ const useCoachDetails = ({
 		}
 
 		if (!selectedDetails) {
-			setDetails("No details found");
+			setDetails("");
 			setDetailsTitle("");
 			setDetailsAudio("");
 			setDetailsImage("");

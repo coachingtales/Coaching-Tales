@@ -3,14 +3,14 @@
 		{
 			"name": "Irene Taylor",
 			"url": "irene_taylor",
-			"hex": "#b1c2d9",
+			"hex": "#00AFB9",
 			"key_facts": {
 				"born": "17 Jul 1905",
 				"active": "Between the Wars",
 				"location": "London, UK"
 			},
 			"component_1": {
-				"image_link": ""
+				"image_link": "/images/IT_component_1.webp"
 			},
 			"component_2": {
 				"title": "Football Coaching",
@@ -52,13 +52,13 @@
 		{
 			"name": "Bobbie Leigh",
 			"url": "bobbie_leigh",
-			"hex": "#efd480",
+			"hex": "#F07167",
 			"key_facts": {
 				"active": "1968",
 				"location": "Cheshire, England, UK"
 			},
 			"component_1": {
-				"image_link": ""
+				"image_link": "/images/BL_component_2.webp"
 			},
 			"component_2": {
 				"title": "Football Coaching",
@@ -100,7 +100,7 @@
 		{
 			"name": "Michele Robinson",
 			"url": "michele_robinson",
-			"hex": "#77b9b4",
+			"hex": "#0081A7",
 			"key_facts": {
 				"born": "29 Oct 1961",
 				"active": "1980s",

@@ -61,22 +61,19 @@ const CoachDetailsPage: React.FC = () => {
 	}
 
 	return (
-		<div
-			className="w-dvw h-dvh flex gap-10 text-slate-100 justify-start items-start flex-col overflow-hidden transition-all duration-300 relative"
-			style={{ background: `${color}` }}
-		>
+		<div className="w-dvw h-dvh flex gap-10 text-slate-100 justify-start items-start flex-col overflow-hidden transition-all duration-300 relative bg-slate-800">
 			<h2 className="text-5xl w-fit h-fit absolute top-1/2 right-1/2 translate-x-1/2 z-10 text-nowrap">
 				{name}
 			</h2>
 			<div className="flex lg:flex-row flex-col h-full w-full">
 				<section
-					className={`bg-slate-800
+					className={`
 						rounded-br-full 
 						rounded-bl-full 
 						lg:rounded-bl-none 
 						lg:rounded-r-full 
 						text-slate-100 
-						p-6
+						p-8
 						z-20 
 						lg:w-[90%] 
 						w-full 

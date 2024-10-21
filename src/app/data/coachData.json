@@ -1,4 +1,152 @@
-{
+"details": [
+    {
+      "name": "Irene Taylor",
+      "url": "irene_taylor",
+      "hex": "#b1c2d9",
+      "key_facts": {
+        "born": "17 Jul 1905",
+        "active": "Between the Wars",
+        "location": "London, UK"
+      },
+      "component_1": {
+        "image_link": "/images/IT_component_1.webp"
+      },
+      "component_2": {
+        "title": "Football Coaching",
+        "transcript": "Hello it’s Irene here. I coach boys in football through my job as a teacher at Gateforth-street School in Marylebone London. I think my mother is still quite shocked that they allow women to get jobs like teaching now. Really I am meant to be teaching the “three Rs”: reading, writing, and arithmetic. I volunteered to coach the boys in football as there was no master available to do so. I am quite pleased that there wasn’t; I am very keen on football or as they say now a “fan”; they certainly wouldn’t have let me have a go if there had been a man free to do it! I really enjoy coaching and it's good to be able to show the boys the value of discipline and strength as well as how to do their sums.",
+        "audio_file": "",
+        "image_link": "/images/IT_component_2.webp"
+      },
+      "component_3": {
+        "title": "Life in Interwar Britain",
+        "transcript": "Hello it’s Irene here. I grew up in Plymouth and I was a child during the great war. As an adult I decided to become a teacher now that women are allowed to do proper teaching. I taught at a school in Chelsea before moving here to Gateforth-street school which is part of London County Council in Marylebone. The school I was teaching at in Chelsea was very old-fashioned and I would never have been able to do this sort of thing but at this London County Council school it’s a bit more all hands to the deck if you’ll pardon the expression! Women played a lot of football during the war to raise money for wounded soldiers but once the men were back they decided that football was unsuitable for women and the FA made a new rule to stop us from playing. So I am fortunate that I get to be involved through my role as a teacher although I only coach boys. Can you imagine the fuss if girls were running around playing football?",
+        "audio_file": "",
+        "image_link": "/images/IT_component_3.webp"
+      },
+      "component_4": {
+        "title": "Goalkeeping",
+        "transcript": "Here I am showing some of the boys how to keep goal during practice. The trick is to be strong and steady but also ready to launch yourself in whichever direction the ball goes. Touching the ball with the tips of your fingers can be enough to send it wide. I often coach the boys in Regents Park so anyone can come and watch and they certainly do. I am not sure if it's my spectacular coaching they come to see or just the spectacle of a woman teaching the boys football. I don’t play much football myself these days but I am a keen observer and I have managed to give the boys a few handy tips. I also give them the motivation to practice and foster a bit of team spirit.",
+        "audio_file": "",
+        "image_link": "/images/IT_component_4.webp"
+      },
+      "component_5": {
+        "title": "The Throw-In",
+        "transcript": "Here is me giving the boys hints on the throw-in at a practice game in Regents Park. Before he let me coach the boys, the headmaster gave me a few pointers. The other masters, despite being mostly cricketers and rowers who think football rather brutish, are also perfectly happy to give me pointers on my coaching. During the throw-in, your feet should not cross the line and you should hold the ball with both hands behind your head. If you spread your fingers apart you will maintain a better grip and you should face the direction that you want to throw the ball.",
+        "audio_file": "",
+        "image_link": "/images/IT_component_5.webp"
+      },
+      "component_6": {
+        "title": "Women in Interwar Britain",
+        "transcript": "Since the great war my friends and I have a lot more job opportunities. Some are teachers like I am but others are nurses and clerks and one is even a secretary. When the men were away fighting in that dreadful war it was left to us to do these jobs or they would not have been done at all. I think that’s one of the reasons we are getting more opportunities now. And why shouldn’t we be allowed to do these sorts of jobs, what with Miss Pankhurst and her ‘Suffragettes’ getting some of us the vote now?",
+        "audio_file": "",
+        "image_link": "/images/IT_component_6.webp"
+      },
+      "component_7": {
+        "title": "Sport in Interwar Britain",
+        "transcript": "Although I coach the boys football there aren’t many opportunities for me to play the game myself. Some of my friends play hockey but they tend to do it amongst themselves and not for an audience as some people still frown upon women running around; they consider the sport too aggressive for a lady’s temperament. I do have a friend that participated in a walking contest for the Women’s League of Health and Beauty that drew quite a crowd. The women who walked the most gracefully and daintily won a sash. I think I’ll stick to coaching! And I’ll let you in on a little secret: last summer I coached the boys' cricket team and am very proud to say that they won the district championship! I hope our football team can do the same!",
+        "audio_file": "",
+        "image_link": "/images/IT_component_7.webp"
+      }
+    },
+    {
+      "name": "Bobbie Leigh",
+      "url": "bobbie_leigh",
+      "hex": "#efd480",
+      "key_facts": {
+        "active": "1968",
+        "location": "Cheshire, England, UK"
+      },
+      "component_1": {
+        "image_link": "/images/BL_component_1.webp"
+      },
+      "component_2": {
+        "title": "Football Coaching",
+        "transcript": "Hello I’m Bobbie. I got involved coaching the boys of Ashton Junior Football Club through my role as leader of the Ashton Heyes Youth Club. The football club was formed out of the youth club. I like to have the rule book to hand during training sessions so I can look up any areas of contention that might come up. Lately after many months of trying we managed to get the use of a field at Manor Farm so we can finally play matches at home as well as away. Up until now we have been having training sessions in our garden!",
+        "audio_file": "",
+        "image_link": "/images/BL_component_2.webp"
+      },
+      "component_3": {
+        "title": "Growing Up in 1960s Britain",
+        "transcript": "I grew up listening to The Beatles; I was a massive fan of theirs as a teenager and I remember arguing with my brother who was mad in love with the Stones. I liked to dress up in miniskirts but it made my mother roll her eyes and my father said I was asking for trouble wearing a thing like that. I thought they were such bores. I am married now and my husband is a business executive. We live in a nice area in Cheshire. I get busy organising events for the local community, some of which go well and some of which don’t. There was such a fuss about one barbecue I organised because the bar didn’t turn up; it even made the local paper. The headline read: A barbecue with no beer!",
+        "audio_file": "",
+        "image_link": "/images/BL_component_3.webp"
+      },
+      "component_4": {
+        "title": "The Header",
+        "transcript": "Here I am using our garden as a training ground. It might seem strange but we have only just been allowed to use the field at Manor Farm. We’ll soon have some goalposts up there and be able to use it for matches and training. We still don’t have permanent premises for the Ashton Heyes Youth Club either. Here we are practicing the header. There wasn’t anything about this in the rulebook; it just tells you the rules rather than how to play, so I got some advice from my husband. I tell the boys they should keep their eyes on the ball, use their forehead for control and accuracy, generate power from the upper body, and get their timing and positioning right. They are getting pretty good at heading the ball between them.",
+        "audio_file": "",
+        "image_link": "/images/BL_component_4.webp"
+      },
+      "component_5": {
+        "title": "The 1960s FA Rulebook",
+        "transcript": "The rulebook focuses on the laws of the game. It tells me about the dimensions of the field, the number of players, fouls, and offsides. It says the length of the field should be between 100-130 yards and the width between 50-100 yards. This came in handy when we were discussing how much land we would need to use for a pitch with the farmer at Manor Farm. The offside rule states that a player is offside if, at the moment the ball is played, any fewer than three opponents, including the goalkeeper, are between the player and the goalkeeper. It also says that the ball should weigh somewhere between 14-16 ounces but I don’t bother weighing them. I think they’re probably alright.",
+        "audio_file": "",
+        "image_link": "/images/BL_component_5.webp"
+      },
+      "component_6": {
+        "title": "Youth Clubs in 1960s Britain",
+        "transcript": "I never expected to be running a place like this when I was younger but here I am and I really enjoy it. We put on all kinds of recreational activities like treasure hunt hikes and day trips as well as the football team for the boys. They’re told what to do at home and at school so we try to let them have a bit of freedom here. It’s not always easy though. Money is tight and the council doesn’t always seem to want to help youth clubs. We make do with what we have but I wish we had more – better equipment for the sports activities or maybe a small library for people who like to read.",
+        "audio_file": "",
+        "image_link": "/images/BL_component_6.webp"
+      },
+      "component_7": {
+        "title": "Women in 1960s Britain",
+        "transcript": "My husband is the breadwinner and he has a role as a business executive with a local firm. I take care of our home and I’m a leader at the local youth club. Although I don’t work, some of my friends are nurses and secretaries. I heard the women who are the sewing machinists at the Ford car plant in Dagenham went on strike because they wanted equal pay with the men! Can you imagine it? I have one friend who has divorced her husband because now the law has changed it’s easier. You no longer need proof of fault, you see. Being unhappy is reason enough and she has been unhappy for such a long time.",
+        "audio_file": "",
+        "image_link": "/images/BL_component_7.webp"
+      }
+    },
+    {
+      "name": "Michele Robinson",
+      "url": "michele_robinson",
+      "hex": "#77b9b4",
+      "key_facts": {
+        "born": "29 Oct 1961",
+        "active": "1980s",
+        "location": "North England, UK"
+      },
+      "component_1": {
+        "image_link": "/images/MR_component_1.webp"
+      },
+      "component_2": {
+        "title": "Football Coaching",
+        "transcript": "Sheffield ring-fenced themselves which meant anybody from outside who wasn’t already in employment there couldn’t get a job there. So I knew I couldn’t stay in Sheffield. Didn’t really want to go home, don’t know why. Just didn’t really want to go back to the Northeast yet. Anyway, a job came up in Leeds and I applied. I got the job in a middle school in the heart of Leeds. The girls wanted a football practice, so I organized a little game against a local school. It was a Saturday morning. I wasn’t sure how many would turn up but they all did, giddy as can be. We played, and we won, and it inspired them to keep playing more and more.",
+        "audio_file": "",
+        "image_link": "/images/MR_component_2.webp"
+      },
+      "component_3": {
+        "title": "Growing Up in Britain in the 1960s and 1970s",
+        "transcript": "Born and bred in Tynemouth in the northeast, I was always sporty and loved being outdoors. I spent my childhood with my best friend Rosie, who was a musician. We were like chalk and cheese – she would be at cello lessons while I played netball. I joined the local athletics team, played hockey and netball, and loved tennis. My family was supportive, letting me do whatever I wanted, even if they didn’t know much about sports themselves. After school, I attended a sixth-form college which was a great transition to university life.",
+        "audio_file": "",
+        "image_link": "/images/MR_component_3.webp"
+      },
+      "component_4": {
+        "title": "Football Coaching Qualifications",
+        "transcript": "They were running a teaching football certificate course on a Saturday. It was your own time, not part of work. I attended with other teachers. It reassured me that I wasn’t off track with my coaching methods. Later, I completed more intensive training at a week-long course. It was hard work, but I learned tactical elements, technical skills, and even how to conduct coaching drills. I passed my final assessment with flying colors and was soon set to help develop girls' and women's football.",
+        "audio_file": "",
+        "image_link": "/images/MR_component_4.webp"
+      },
+      "component_5": {
+        "title": "Developing Football in the 1980s",
+        "transcript": "Being a women and girls football development officer with no equipment was a challenge. I spent much of my time building contacts and finding receptive areas. I worked with other football development officers in Greater Manchester, many of whom were male, but some female managers were really into developing girls' football. I began running coaching sessions, getting 40 people through preliminaries and training hundreds of teachers. It was tough, but I worked to show the FA that I was making an impact.",
+        "audio_file": "",
+        "image_link": "/images/MR_component_5.webp"
+      },
+      "component_6": {
+        "title": "Employment Choices for women in 1970s Britain",
+        "transcript": "In sixth form, I dreamed of joining the RAF and becoming a pilot, but when I found out women couldn’t fly planes at the time, I had to rethink my options. It was either the forces or something in physical education. I attended a careers fair, but was disappointed to hear the limited roles women could pursue in the RAF. That’s when I decided to focus on sports and physical education instead.",
+        "audio_file": "",
+        "image_link": "/images/MR_component_6.webp"
+      },
+      "component_7": {
+        "title": "Region",
+        "transcript": "Growing up in the Northeast, supporting Newcastle United was almost a religion. I remember watching FA Cup matches with my family – it was a big occasion. I always wanted to play football, but the PE teachers didn’t know enough about it to teach us. I think if they had, I would have been out on the field like the boys.",
+        "audio_file": "",
+        "image_link": "/images/MR_component_7.webp"
+      }
+    }
+  ]
+=======
 	"details": [
 		{
 			"name": "Irene Taylor",

@@ -71,13 +71,12 @@ const CoachDetailsPage: React.FC = () => {
 			<div className="flex lg:flex-row flex-col h-full w-full">
 				<section
 					className={`bg-slate-800
-						bg-opacity-20
 						rounded-br-full 
 						rounded-bl-full 
 						lg:rounded-bl-none 
 						lg:rounded-r-full 
 						text-slate-100 
-						p-10 
+						p-6
 						z-20 
 						lg:w-[90%] 
 						w-full 
@@ -87,7 +86,7 @@ const CoachDetailsPage: React.FC = () => {
 						transition-all 
 						duration-300 
 						shadow-2xl`}
-					style={{ backdropFilter: "blur(15px)" }}
+					style={{ background: `${color}` }}
 				>
 					<div className="w-full h-[80%] lg:h-full lg:w-[80%]  grid grid-cols-2 grid-rows-[1fr-1fr]">
 						<div className="w-80 rounded-xl object-cover overflow-hidden">
@@ -101,21 +100,21 @@ const CoachDetailsPage: React.FC = () => {
 						</div>
 						<div>
 							{name && (
-								<h1 className="p-2 text-nowrap text-4xl font-bold">{name}</h1>
+								<h1 className="p-2 text-nowrap text-3xl font-bold">{name}</h1>
 							)}
 							<div className="p-4 h-full w-full flex gap-4 flex-col">
 								{born && (
-									<div className="flex flex-col gap-1 text-2xl">
+									<div className="flex flex-col gap-1 text-xl">
 										<span>Born:</span> {born}
 									</div>
 								)}
 								{active && (
-									<div className="flex flex-col gap-1 text-2xl">
+									<div className="flex flex-col gap-1 text-xl">
 										<span>Active:</span> {active}
 									</div>
 								)}
 								{location && (
-									<div className="flex flex-col gap-1 text-2xl">
+									<div className="flex flex-col gap-1 text-xl">
 										<span>Location:</span> {location}
 									</div>
 								)}
@@ -124,13 +123,13 @@ const CoachDetailsPage: React.FC = () => {
 
 						<div className="w-full h-full col-span-2 flex flex-row gap-4 justify-around items-center">
 							<Link
-								className="text-slate-100 px-6 py-4 text-2xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
+								className="text-slate-100 px-6 py-4 text-xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
 								href={`/${coachesUrl}/Football`}
 							>
 								Football Coaching
 							</Link>
 							<Link
-								className="text-slate-100 px-6 py-4 text-2xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
+								className="text-slate-100 px-6 py-4 text-xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
 								href={`/${coachesUrl}/Culture`}
 							>
 								Culture and Influence

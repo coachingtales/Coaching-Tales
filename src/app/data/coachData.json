@@ -10,7 +10,7 @@
 				"location": "London, UK"
 			},
 			"component_1": {
-				"image_link": ""
+				"image_link": "/images/IT_component_1.webp"
 			},
 			"component_2": {
 				"title": "Football Coaching",
@@ -58,7 +58,7 @@
 				"location": "Cheshire, England, UK"
 			},
 			"component_1": {
-				"image_link": ""
+				"image_link": "/images/BL_component_2.webp"
 			},
 			"component_2": {
 				"title": "Football Coaching",

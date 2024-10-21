@@ -3,7 +3,7 @@
     {
       "name": "Irene Taylor",
       "url": "irene_taylor",
-      "background_colour": "#b1c2d9",
+      "hex": "#b1c2d9",
       "key_facts": {
         "born": "17 Jul 1905",
         "active": "Between the Wars",
@@ -52,7 +52,7 @@
     {
       "name": "Bobbie Leigh",
       "url": "bobbie_leigh",
-      "background_colour": "#efd480",
+      "hex": "#efd480",
       "key_facts": {
         "active": "1968",
         "location": "Cheshire, England, UK"
@@ -100,7 +100,7 @@
     {
       "name": "Michele Robinson",
       "url": "michele_robinson",
-      "background_colour": "#77b9b4",
+      "hex": "#77b9b4",
       "key_facts": {
         "born": "29 Oct 1961",
         "active": "1980s",

@@ -7,6 +7,10 @@ export interface UseCoachDetailsParams {
 	color?: string | undefined;
 }
 
+export interface Props {
+	params: { coach?: string; path?: string; choices?: string };
+}
+
 export interface UseCoachDetailsResult {
 	details: string;
 	detailsTitle: string;

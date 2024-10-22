@@ -11,6 +11,7 @@ const CoachDetailsPage: React.FC = () => {
 	const [id, setId] = useState(0);
 	const [transition, setTransition] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [firstPage, setFirstPage] = useState(true);
 
 	const coachesUrl = coachData.details[id].url;
 
@@ -60,9 +61,21 @@ const CoachDetailsPage: React.FC = () => {
 		}, 300);
 	}
 
+	function chooseCoach() {
+		setTransition(true);
+		setLoading(true);
+		setTimeout(() => {
+			setFirstPage(false);
+			setTransition(false);
+			setLoading(false);
+		}, 300);
+	}
+
 	return (
 		<div className="w-dvw h-dvh flex gap-10 text-slate-100 justify-start items-start flex-col overflow-hidden transition-all duration-300 relative bg-slate-800">
-			<h2 className="text-5xl w-fit h-fit absolute top-1/2 right-1/2 translate-x-1/2 z-10 text-nowrap">
+			<h2
+				className={`${loading ? "opacity-0" : "opacity-100"} transition-all duration-300 text-5xl w-fit h-fit absolute top-1/2 right-1/2 translate-x-1/2 z-10 text-nowrap`}
+			>
 				{name}
 			</h2>
 			<div className="flex lg:flex-row flex-col h-full w-full">
@@ -95,66 +108,97 @@ const CoachDetailsPage: React.FC = () => {
 								height={600}
 							/>
 						</div>
-						<div>
+						<div
+							className={`${firstPage ? "h-full w-full flex justify-center items-center" : ""}`}
+						>
 							{name && (
-								<h1 className="p-2 text-nowrap text-3xl font-bold">{name}</h1>
+								<h1
+									className={`text-nowrap ${firstPage ? "text-4xl underline" : "text-3xl"} font-bold`}
+								>
+									{name}
+								</h1>
 							)}
-							<div className="p-4 h-full w-full flex gap-4 flex-col">
-								{born && (
-									<div className="flex flex-col gap-1 text-xl">
-										<span>Born:</span> {born}
-									</div>
-								)}
-								{active && (
-									<div className="flex flex-col gap-1 text-xl">
-										<span>Active:</span> {active}
-									</div>
-								)}
-								{location && (
-									<div className="flex flex-col gap-1 text-xl">
-										<span>Location:</span> {location}
-									</div>
-								)}
-							</div>
+							{!firstPage && (
+								<div className="p-4 h-full w-full flex gap-4 flex-col">
+									{born && (
+										<div className="flex flex-col gap-1 text-xl">
+											<span>Born:</span> {born}
+										</div>
+									)}
+									{active && (
+										<div className="flex flex-col gap-1 text-xl">
+											<span>Active:</span> {active}
+										</div>
+									)}
+									{location && (
+										<div className="flex flex-col gap-1 text-xl">
+											<span>Location:</span> {location}
+										</div>
+									)}
+								</div>
+							)}
 						</div>
 
-						<div className="w-full h-full col-span-2 flex flex-row gap-4 justify-around items-center">
-							<Link
-								className="text-slate-100 px-6 py-4 text-xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
-								href={`/${coachesUrl}/Football`}
-							>
-								Football Coaching
-							</Link>
-							<Link
-								className="text-slate-100 px-6 py-4 text-xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
-								href={`/${coachesUrl}/Culture`}
-							>
-								Culture and Influence
-							</Link>
-						</div>
+						{!firstPage && (
+							<div className="w-full h-full col-span-2 flex flex-row gap-4 justify-around items-center">
+								<Link
+									className="text-slate-100 px-6 py-4 text-xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
+									href={`/${coachesUrl}/Football`}
+								>
+									Football Coaching
+								</Link>
+								<Link
+									className="text-slate-100 px-6 py-4 text-xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
+									href={`/${coachesUrl}/Culture`}
+								>
+									Culture and Influence
+								</Link>
+							</div>
+						)}
+						{firstPage && (
+							<div className="w-full h-full col-span-2 flex flex-row gap-4 justify-around items-center">
+								<button
+									type="button"
+									className="text-slate-100 px-6 py-4 text-xl rounded-xl font-bold w-fit  text-center border-[#ececec] border-4 shadow-lg"
+									onClick={chooseCoach}
+								>
+									Choose Coach
+								</button>
+							</div>
+						)}
 					</div>
 				</section>
-				<div
-					className="lg:w-[10%] w-full lg:h-full h-[10%] flex lg:flex-col flex-row gap-4 justify-evenly items-center"
-					style={{ filter: "invert(1)" }}
-				>
-					<button className="rotate-180" type="button" onClick={previousCoach}>
-						<Image
-							src="/icons/icons8-right-arrow-50.png"
-							alt="right arrow"
-							width={50}
-							height={50}
-						/>
-					</button>
-					<button type="button" onClick={nextCoach}>
-						<Image
-							src="/icons/icons8-right-arrow-50.png"
-							alt="right arrow"
-							width={50}
-							height={50}
-						/>
-					</button>
-				</div>
+				{firstPage && (
+					<div
+						className="lg:w-[10%] w-full lg:h-full h-[10%] flex lg:flex-col flex-row gap-4 justify-evenly items-center"
+						style={{ filter: "invert(1)" }}
+					>
+						<button
+							className={`rotate-180 ${loading ? "opacity-0" : "opacity-100"} transition-all duration-300`}
+							type="button"
+							onClick={previousCoach}
+						>
+							<Image
+								src="/icons/icons8-right-arrow-50.png"
+								alt="right arrow"
+								width={50}
+								height={50}
+							/>
+						</button>
+						<button
+							type="button"
+							onClick={nextCoach}
+							className={`${loading ? "opacity-0" : "opacity-100"} transition-all duration-300`}
+						>
+							<Image
+								src="/icons/icons8-right-arrow-50.png"
+								alt="right arrow"
+								width={50}
+								height={50}
+							/>
+						</button>
+					</div>
+				)}
 			</div>
 		</div>
 	);

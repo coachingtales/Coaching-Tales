@@ -41,7 +41,7 @@ const CoachDetailsPage = ({ params }: Props) => {
 		<div className="w-full h-full flex gap-5 text-slate-100 justify-start items-start flex-col transition-all duration-300 relative bg-slate-800">
 			<div className="flex lg:flex-row flex-col h-full w-full">
 				<div
-					className={`absolute top-0 left-0 w-full h-full rounded-br-full 
+					className={`absolute top-0 left-0 w-full h-full rounded-br-full
             rounded-bl-full 
             lg:rounded-bl-none 
             lg:rounded-r-full shadow-2xl rounded-r-full ${transition ? "translate-x-[-200vw]" : "translate-x-0"} transition-all duration-300`}
@@ -50,7 +50,7 @@ const CoachDetailsPage = ({ params }: Props) => {
 					}}
 				/>
 				<div
-					className={`absolute top-0 left-0 lg:w-[98%] rounded-br-full 
+					className={`absolute top-0 left-0 lg:w-[98%] rounded-br-full
             rounded-bl-full 
             lg:rounded-bl-none 
             lg:rounded-r-full  w-full shadow-2xl lg:h-full h-[98%] rounded-r-full ${transition ? "translate-x-[-200vw]" : "translate-x-0"} transition-all duration-300`}

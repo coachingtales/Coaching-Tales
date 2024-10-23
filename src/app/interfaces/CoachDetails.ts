@@ -22,9 +22,14 @@ export interface UseCoachDetailsResult {
 	location: string;
 	PDF: Record<string, ComponentDetails>;
 	color: string;
+	prevCoach: CoachComponents | null;
+	nextCoach: CoachComponents | null;
 }
 
 export interface CoachComponents {
+	name: string;
+	hex: string;
+	key_facts: KeyFacts;
 	url: string;
 	component_1?: {
 		image_link: string;

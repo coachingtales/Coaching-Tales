@@ -10,7 +10,7 @@ const useCoachNavigation = () => {
 
 	const coachesUrl = coachData.details[id].url;
 
-	const nextCoach = () => {
+	const nextCoachDetails = () => {
 		setTransition(true);
 		setLoading(true);
 		setTimeout(() => {
@@ -54,7 +54,7 @@ const useCoachNavigation = () => {
 		loading,
 		firstPage,
 		coachesUrl,
-		nextCoach,
+		nextCoachDetails,
 		previousCoach,
 		chooseCoach,
 	};

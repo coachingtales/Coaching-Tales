@@ -23,6 +23,8 @@ const useCoachDetails = ({
 	const [location, setLocation] = useState("");
 	const [color, setColor] = useState("");
 	const [PDF, setPDF] = useState<Record<string, ComponentDetails>>({});
+	const [prevCoach, setPrevCoach] = useState<CoachComponents | null>(null);
+	const [nextCoach, setNextCoach] = useState<CoachComponents | null>(null);
 
 	useEffect(() => {
 		if (!coach) return;
@@ -42,6 +44,8 @@ const useCoachDetails = ({
 			setLocation("");
 			setPDF({});
 			setColor("");
+			setPrevCoach(null);
+			setNextCoach(null);
 			return;
 		}
 
@@ -118,6 +122,26 @@ const useCoachDetails = ({
 		setDetailsAudio(selectedDetails.audio_file || "");
 		setDetailsImage(selectedDetails.image_link || "");
 		setPDF(PDF);
+
+		// Get the current coach index
+		const currentIndex = coachData.details.findIndex(
+			(coachItem: CoachComponents) => coachItem.url === coach,
+		);
+
+		const totalCoaches = coachData.details.length;
+
+		if (currentIndex !== -1) {
+			// Looping logic for previous coach
+			const previousIndex = (currentIndex - 1 + totalCoaches) % totalCoaches;
+			setPrevCoach(coachData.details[previousIndex]);
+
+			// Looping logic for next coach
+			const nextIndex = (currentIndex + 1) % totalCoaches;
+			setNextCoach(coachData.details[nextIndex]);
+		} else {
+			setPrevCoach(null);
+			setNextCoach(null);
+		}
 	}, [coach, path, choices]);
 
 	return {
@@ -131,6 +155,8 @@ const useCoachDetails = ({
 		location,
 		PDF,
 		color,
+		prevCoach,
+		nextCoach,
 	};
 };
 

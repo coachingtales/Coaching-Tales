@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import useCoachDetails from "@/app/hooks/useCoachDetails";
 import useCoachNavigation from "@/app/hooks/useCoachNavigation";
 import coachData from "@/app/data/coachData.json";
 import type { Props } from "@/app/interfaces/CoachDetails";
@@ -23,7 +22,7 @@ const CoachDetailsPage = ({ params }: Props) => {
 			<button
 				type="button"
 				className="z-50 absolute bottom-5 right-5"
-				onClick={nextCoachDetails}
+				onClick={previousCoach}
 			>
 				<Image
 					src="/icons/right.png"
@@ -35,67 +34,37 @@ const CoachDetailsPage = ({ params }: Props) => {
 			<button
 				type="button"
 				className="z-50 absolute bottom-5 left-5"
-				onClick={previousCoach}
+				onClick={nextCoachDetails}
 			>
 				<Image src="/icons/left.png" alt="left arrow" width={48} height={48} />
 			</button>
-			<div
-				className={`w-full h-full bg-[${coachData.details[0].hex}] z-10 bottom-0 left-0 absolute transition-all duration-300 rounded-t-full`}
-				style={{
-					transform: `${id === 0 ? "translateX(0) translateY(20vh)" : "translateX(-87vw) translateY(20vh)"}`,
-				}}
-			>
-				<div className="w-full h-full grid grid-cols-2 text-[4rem] lg:text-[5rem]">
-					<div className="h-[82%] aspect-[2/3] relative z-30">
-						<Image
-							src={coachData.details[0].component_1.image_link}
-							alt={coachData.details[0].name}
-							fill
-						/>
+			{coachData.details.map((coach, index) => {
+				return (
+					<div
+						key={coach.name}
+						className={
+							"w-full h-full z-10 bottom-0 left-0 absolute transition-all duration-300 rounded-t-full shadow-2xl"
+						}
+						style={{
+							background: coach.hex,
+							transform: `${id === index ? "translateX(0) translateY(20vh)" : `translateX(-${index * 5 + 85}vw) translateY(20vh)`}`,
+						}}
+					>
+						<div className="w-full h-full grid grid-cols-2 text-[4rem] lg:translate-x-[4vw] lg:text-[5rem]">
+							<div className="h-[82%] aspect-[2/3] relative z-30 translate-x-[-8vw] lg:translate-x-0">
+								<Image
+									src={coach.component_1.image_link}
+									alt={coach.name}
+									fill
+								/>
+							</div>
+							<h2 className="self-center font-bold lg:translate-x-[-10vw]">
+								{coach.name}
+							</h2>
+						</div>
 					</div>
-					<h2 className="self-center font-bold translate-x-14">
-						{coachData.details[0].name}
-					</h2>
-				</div>
-			</div>
-			<div
-				className={`w-full h-full bg-[${coachData.details[1].hex}] z-10 bottom-0 left-0 absolute transition-all duration-300 rounded-t-full`}
-				style={{
-					transform: `${id === 1 ? "translateX(0) translateY(20vh)" : "translateX(-91vw) translateY(20vh)"}`,
-				}}
-			>
-				<div className="w-full h-full grid grid-cols-2 text-[4rem] lg:text-[5rem]">
-					<div className="h-[82%] aspect-[2/3] relative z-30">
-						<Image
-							src={coachData.details[1].component_1.image_link}
-							alt={coachData.details[1].name}
-							fill
-						/>
-					</div>
-					<h2 className="self-center font-bold translate-x-14">
-						{coachData.details[1].name}
-					</h2>
-				</div>
-			</div>
-			<div
-				className={`w-full h-full bg-[${coachData.details[2].hex}] z-10 bottom-0 left-0 absolute transition-all duration-300 rounded-t-full`}
-				style={{
-					transform: `${id === 2 ? "translateX(0) translateY(20vh)" : "translateX(-95vw) translateY(20vh)"}`,
-				}}
-			>
-				<div className="w-full h-full grid grid-cols-2 text-[4rem] lg:text-[5rem]">
-					<div className="h-[82%] aspect-[2/3] relative z-30">
-						<Image
-							src={coachData.details[2].component_1.image_link}
-							alt={coachData.details[2].name}
-							fill
-						/>
-					</div>
-					<h2 className="self-center font-bold translate-x-14">
-						{coachData.details[2].name}
-					</h2>
-				</div>
-			</div>
+				);
+			})}
 		</div>
 	);
 };

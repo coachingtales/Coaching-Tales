@@ -66,7 +66,7 @@ const CoachDetailsPage = ({ params }: Props) => {
 						>
 							<Link
 								className="w-fit p-6 lg:justify-self-end self-end lg:self-center lg:row-start-1 lg:col-start-2 pointer-events-auto"
-								href={`/${coach.url}`}
+								href={`/${coach.url}/choose_path`}
 							>
 								<div className="w-fit font-bold text-center lg:text-left">
 									{coach.name}

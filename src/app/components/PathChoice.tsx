@@ -3,7 +3,7 @@ import Link from "next/link";
 import useCoachDetails from "@/app/hooks/useCoachDetails";
 import type { Props } from "@/app/interfaces/CoachDetails";
 
-const Path = ({params} : Props) => {
+const Path = ({ params }: Props) => {
 	const { coach, path } = params;
 	const {
 		details,
@@ -38,10 +38,14 @@ const Path = ({params} : Props) => {
 			<p>{detailsImage}</p>
 			<ul className="mt-4 space-y-2">
 				<li>
-					<Link href={`/${coach}/${path}/choice_1`}>{coachChoice1}</Link>
+					<Link href={`/${coach}/choose_path/${path}/choice_1`}>
+						{coachChoice1}
+					</Link>
 				</li>
 				<li>
-					<Link href={`/${coach}/${path}/choice_2`}>{coachChoice2}</Link>
+					<Link href={`/${coach}/choose_path/${path}/choice_2`}>
+						{coachChoice2}
+					</Link>
 				</li>
 			</ul>
 		</div>

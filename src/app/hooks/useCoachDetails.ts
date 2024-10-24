@@ -25,6 +25,7 @@ const useCoachDetails = ({
 	const [PDF, setPDF] = useState<Record<string, ComponentDetails>>({});
 	const [prevCoach, setPrevCoach] = useState<CoachComponents | null>(null);
 	const [nextCoach, setNextCoach] = useState<CoachComponents | null>(null);
+	const [coachImage, setCoachImage] = useState("");
 
 	useEffect(() => {
 		if (!coach) return;
@@ -46,6 +47,7 @@ const useCoachDetails = ({
 			setColor("");
 			setPrevCoach(null);
 			setNextCoach(null);
+			setCoachImage("");
 			return;
 		}
 
@@ -54,6 +56,7 @@ const useCoachDetails = ({
 		setActive(coachDetails.key_facts.active || "");
 		setLocation(coachDetails.key_facts.location || "");
 		setColor(coachDetails.hex || "");
+		setCoachImage(coachDetails.component_1.image_link || "");
 
 		let selectedDetails: ComponentDetails | undefined;
 		let PDF: Record<string, ComponentDetails> = {};
@@ -157,6 +160,7 @@ const useCoachDetails = ({
 		color,
 		prevCoach,
 		nextCoach,
+		coachImage,
 	};
 };
 

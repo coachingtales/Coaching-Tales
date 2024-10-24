@@ -24,6 +24,7 @@ export interface UseCoachDetailsResult {
 	color: string;
 	prevCoach: CoachComponents | null;
 	nextCoach: CoachComponents | null;
+	coachImage: string;
 }
 
 export interface CoachComponents {

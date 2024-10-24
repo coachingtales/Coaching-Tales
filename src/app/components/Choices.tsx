@@ -29,7 +29,7 @@ const Choices = ({ params }: Props) => {
 			<p>{detailsAudio}</p>
 			<p>{detailsImage}</p>
 			<br />
-			<Link href={`/${coach}/${path}/${choices}/end`}>End</Link>
+			<Link href={`/${coach}/choose_path/${path}/${choices}/end`}>End</Link>
 		</div>
 	);
 };

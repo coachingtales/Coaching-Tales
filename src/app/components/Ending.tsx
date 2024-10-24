@@ -22,7 +22,9 @@ const EndPage = ({ params }: Props) => {
 		>
 			<h1 className="text-4xl font-bold underline">{name}</h1>
 			<div className="mt-4 space-y-2">
-				<Link href={`/${coach}/${path}/${choices}/end/save_pdf`}>Save PDF</Link>
+				<Link href={`/${coach}/choose_path/${path}/${choices}/end/save_pdf`}>
+					Save PDF
+				</Link>
 				<Link href="/">Reset</Link>
 			</div>
 		</div>

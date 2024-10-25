@@ -2,14 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import useCoachNavigation from "@/app/hooks/useCoachNavigation";
-import coachData from "@/app/data/coachData.json";
 import useCoachDetails from "../hooks/useCoachDetails";
 import type { Props } from "@/app/interfaces/CoachDetails";
 
-const CoachDetailsPage = ({ params }: Props) => {
+const CoachPath = ({ params }: Props) => {
 	const { coach } = params;
-	const { id } = useCoachNavigation();
-	const { name, color, coachImage } = useCoachDetails({ coach } as {
+	const { name, color, coachImage, location, active, born } = useCoachDetails({
+		coach,
+	} as {
 		coach: string;
 	});
 
@@ -17,40 +17,56 @@ const CoachDetailsPage = ({ params }: Props) => {
 		return <h1>No Coach Found</h1>;
 	}
 
-	console.log(id);
-
 	return (
-		<div className="w-full h-full relative bg-[#F5F5F5] overflow-hidden pointer-events-none">
-			<div className="h-screen w-screen fixed grid grid-rows-[100px,1fr]">
-				<h1 className="w-full h-fit text-center font-bold text-[9dvw] p-2 z-50">
-					Pick a Tale
-				</h1>
+		<div className="w-screen h-screen relative grid grid-rows-[100px_1fr] overflow-hidden pointer-events-none bg-[#EEEDEA]">
+			<h1 className="text-center place-self-center text-6xl font-bold z-50">
+				Pick a Tale
+			</h1>
+
+			<div className="relative">
 				<div
-					className={
-						"w-full pointer-events-none h-full lg:bottom-0 top-[-10%] lg:top-0 left-0 absolute transition-all duration-300 rounded-t-full shadow-2xl"
-					}
+					className="z-0 w-[1000px] h-[1000px] rounded-full absolute lg:top-[-5%] top-0 right-[-10%] lg:right-0 shadow-2xl"
 					style={{
-						zIndex: `${id + 1 * 5}`,
 						background: color,
-						transform: "translateX(0) translateY(20vh)",
 					}}
 				/>
-				<div
-					className={
-						"w-screen h-screen grid grid-rows-[100px, 1fr] lg:grid-cols-2 place-items-center text-[7dvw] transition-all duration-300"
-					}
-					style={{
-						transform: "translateX(0) translateY(0)",
-						zIndex: `${id + 1 * 6}`,
-					}}
-				>
-					<div className="w-fit p-6 lg:justify-self-end self-end lg:self-center lg:row-start-1 lg:col-start-2 pointer-events-auto">
-						<div className="w-fit font-bold text-center lg:text-left">
-							{name}
-						</div>
+				<div className="z-50 w-full h-full h-600px grid grid-cols-[45%_50%] grid-rows-[200px_1fr_1fr] gap-5">
+					<h2 className="z-50 p-4 lg:p-0 text-5xl font-bold lg:col-start-2 row-start-1 col-start-1 col-end-3 self-end lg:self-end lg:row-start-1 justify-self-center lg:justify-self-start">
+						{name}
+					</h2>
+					<div className="z-50 flex flex-col gap-2 self-center text-2xl row-start-2 col-start-2">
+						<p>
+							Location: <span className="font-bold">{location}</span>
+						</p>
+						<p>
+							Born: <span className="font-bold">{born}</span>
+						</p>
+						<p>
+							Active: <span className="font-bold">{active}</span>
+						</p>
 					</div>
-					<div className="w-fit h-full lg:justify-self-end lg:row-start-1 lg:col-start-1">
-						<Image src={coachImage} alt={name} width={500} height={500} />
+					<Image
+						src={coachImage}
+						alt={name}
+						width={530}
+						height={530}
+						className="z-40 absolute bottom-0 left-0"
+					/>
+					<div className="z-40 flex justify-evenly gap-2 col-start-2 row-start-3">
+						<Link
+							className="text-2xl h-fit pointer-events-auto px-6 py-4 rounded-xl font-bold w-fit text-center shadow-2xl border-[3px] border-slate-800"
+							href={`/${coach}/choose_path/football`}
+							style={{ background: color }}
+						>
+							Football
+						</Link>
+						<Link
+							className="text-2xl pointer-events-auto px-6 py-4 rounded-xl font-bold w-fit h-fit text-center shadow-2xl border-[3px] border-slate-800"
+							href={`/${coach}/choose_path/culture`}
+							style={{ background: color }}
+						>
+							Culture
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -58,4 +74,4 @@ const CoachDetailsPage = ({ params }: Props) => {
 	);
 };
 
-export default CoachDetailsPage;
+export default CoachPath;

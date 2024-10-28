@@ -46,7 +46,7 @@ const Path = ({ params }: Props) => {
 			)}
 			{content === "audio" && (
 				<>
-					<CustomAudioPlayer audioLink="/audio/blank_space.mp3" />
+					<CustomAudioPlayer audioLink={detailsAudio} />
 					<div className="row-start-2 col-start-2 lg:col-span-7 col-span-8 row-span-7 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">
 						<div className="w-full h-full relative rounded-md z-50">
 							<Image

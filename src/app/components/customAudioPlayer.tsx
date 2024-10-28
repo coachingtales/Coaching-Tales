@@ -75,7 +75,7 @@ export default function CustomAudioPlayer({
 			<button
 				type="button"
 				onClick={togglePlayPause}
-				className="text-white text-4xl"
+				className="text-white text-4xl invert"
 			>
 				{isPlaying ? (
 					<Image
@@ -119,7 +119,7 @@ export default function CustomAudioPlayer({
 			<button
 				type="button"
 				onClick={toggleMute}
-				className="text-white text-4xl"
+				className="text-white text-4xl invert"
 			>
 				{isMuted ? (
 					<Image src="/icons/muted.png" alt="muted" width={48} height={48} />

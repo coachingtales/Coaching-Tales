@@ -28,6 +28,7 @@ const Choices: React.FC = () => {
 			<br />
 			<p>{details}</p>
 			<p>{detailsAudio}</p>
+
 			<p>{detailsImage}</p>
 			<br />
 			<Link href={`/${coach}/${path}/${choices}/end`}>End</Link>

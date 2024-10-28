@@ -3,10 +3,12 @@ import Image from "next/image";
 
 interface CustomAudioPlayerProps {
 	audioLink: string;
+	audioTrans: string;
 }
 
 export default function CustomAudioPlayer({
 	audioLink,
+	audioTrans,
 }: CustomAudioPlayerProps) {
 	const audioRef = useRef<HTMLAudioElement | null>(null); // Nullable type
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -129,8 +131,9 @@ export default function CustomAudioPlayer({
 			</button>
 
 			{/* Hidden Audio Element */}
-			{/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
-			<audio ref={audioRef} src={audioLink} />
+			<audio ref={audioRef} src={audioLink}>
+				<track kind="captions" src={audioTrans} />
+			</audio>
 		</div>
 	);
 }

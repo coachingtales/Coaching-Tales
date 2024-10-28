@@ -55,24 +55,22 @@ const CoachDetailsPage = ({ params }: Props) => {
 							/>
 							<div
 								key={coach.name}
-								className="fixed w-full h-full grid grid-rows-[25%_75%] lg:grid-rows-1 lg:grid-cols-[50%_50%] transition-all duration-300 ease-in-out"
+								className="fixed w-full h-full grid grid-cols-10 grid-rows-10 gap-5 transition-all duration-300 ease-in-out"
 								style={{
 									transform: `${id === index ? "translateX(0)" : "translateX(-100vw)"}`,
 									zIndex: `${index + 1 * 6}`,
 								}}
 							>
-								<div className="h-full lg:col-start-1 row-start-2 lg:row-start-1 lg:row-end-2 justify-self-start lg-justify-self-end lg:justify-self-end">
+								<div className="row-start-2 col-start-1 lg:col-start-2 row-span-8 col-span-7 lg:col-span-4 relative">
 									<Image
-										className="rounded-full"
 										src={coach.component_1.image_link}
 										alt={coach.name}
-										width={500}
-										height={500}
+										fill
 									/>
 								</div>
 								<Link
 									href={`/${coach.url}/choose_path`}
-									className="pointer-events-auto max-w-2 self-end lg:self-center justify-self-start pl-20 lg:p-0 lg:justify-self-start text-7xl font-bold"
+									className="pointer-events-auto text-5xl lg:col-start-5 lg:row-start-5 flex justify-center items-center font-bold row-start-2 col-start-1 col-span-8 lg:col-span-7"
 								>
 									{coach.name}
 								</Link>

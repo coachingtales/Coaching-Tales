@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import useCoachNavigation from "@/app/hooks/useCoachNavigation";
 import useCoachDetails from "../hooks/useCoachDetails";
 import type { Props } from "@/app/interfaces/CoachDetails";
 
@@ -55,14 +54,14 @@ const CoachPath = ({ params }: Props) => {
 					<div className="z-40 flex justify-evenly gap-2 col-start-2 row-start-3">
 						<Link
 							className="text-2xl h-fit pointer-events-auto px-6 py-4 rounded-xl font-bold w-fit text-center shadow-2xl border-[3px] border-slate-800"
-							href={`/${coach}/choose_path/football`}
+							href={`/${coach}/choose_path/Football`}
 							style={{ background: color }}
 						>
 							Football
 						</Link>
 						<Link
 							className="text-2xl pointer-events-auto px-6 py-4 rounded-xl font-bold w-fit h-fit text-center shadow-2xl border-[3px] border-slate-800"
-							href={`/${coach}/choose_path/culture`}
+							href={`/${coach}/choose_path/Culture`}
 							style={{ background: color }}
 						>
 							Culture

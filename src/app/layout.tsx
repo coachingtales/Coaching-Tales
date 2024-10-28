@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat_Alternates } from "@next/font/google";
+import { Montserrat_Alternates } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {

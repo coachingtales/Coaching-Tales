@@ -54,14 +54,14 @@ const CoachPath = ({ params }: Props) => {
 						<Image src={coachImage} alt={name} fill objectFit="cover" />
 					</div>
 					<Link
-						className="text-2xl z-50 pointer-events-auto row-start-5 col-start-6 col-span-4 flex justify-center items-center rounded-xl font-bold text-center shadow-2xl border-[3px] border-slate-800"
+						className="text-2xl z-50 pointer-events-auto row-start-5 col-start-6 col-span-4 flex justify-center items-center rounded-xl font-bold text-center shadow-2xl border-2 border-slate-200"
 						href={`/${coach}/choose_path/Football`}
 						style={{ background: color }}
 					>
 						Football
 					</Link>
 					<Link
-						className="text-2xl z-50 col-start-6 col-span-4 row-start-6 flex justify-center items-center pointer-events-auto rounded-xl font-bold text-center shadow-2xl border-[3px] border-slate-800"
+						className="text-2xl z-50 col-start-6 col-span-4 row-start-6 flex justify-center items-center pointer-events-auto rounded-xl font-bold text-center shadow-2xl border-2 border-slate-200"
 						href={`/${coach}/choose_path/Culture`}
 						style={{ background: color }}
 					>

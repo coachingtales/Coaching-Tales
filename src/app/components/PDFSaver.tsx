@@ -2,6 +2,21 @@
 import Link from "next/link";
 import useCoachDetails from "@/app/hooks/useCoachDetails";
 import type { Props } from "@/app/interfaces/CoachDetails";
+import {
+	Document,
+	Page,
+	pdf,
+	StyleSheet,
+	Text,
+	Image,
+	Font,
+} from "@react-pdf/renderer";
+import { saveAs } from "file-saver";
+
+Font.register({
+	family: "Oswald",
+	src: "https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf",
+});
 
 const SavePDF = ({ params }: Props) => {
 	const { choices, coach, path } = params;
@@ -26,6 +41,24 @@ const SavePDF = ({ params }: Props) => {
 		PDF.component_choice?.title || "No title available";
 	const componentChoiceTranscript =
 		PDF.component_choice?.transcript || "No transcript available";
+	const componentChoiceImage = PDF.component_choice?.image_link || "";
+	const componentPathImage = PDF.component_path?.image_link || "";
+
+	const savePDF = async () => {
+		const MyDocument = (
+			<Document>
+				<Page>
+					<Text fixed>{name}</Text>
+				</Page>
+			</Document>
+		);
+
+		// Generate and download the PDF as a Blob
+		const blob = await pdf(MyDocument).toBlob();
+		saveAs(blob, "document_with_image.pdf");
+	};
+
+	console.table(PDF.component_choice);
 
 	return (
 		<div
@@ -42,7 +75,9 @@ const SavePDF = ({ params }: Props) => {
 			<p>{componentPathTranscript}</p>
 			<h2 className="text-3xl font-bold mt-4">{componentChoiceTitle}</h2>
 			<p>{componentChoiceTranscript}</p>
-			<p>Save PDF</p>
+			<button type="button" onClick={savePDF}>
+				Save PDF
+			</button>
 			<div className="mt-4">
 				<Link href="/">Skip</Link>
 			</div>

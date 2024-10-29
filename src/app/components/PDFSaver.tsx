@@ -14,8 +14,47 @@ import {
 import { saveAs } from "file-saver";
 
 Font.register({
-	family: "Oswald",
-	src: "https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf",
+	family: "Montserrat_Alternates",
+	fonts: [
+		{
+			src: "/fonts/Montserrat_Alternates/MontserratAlternates-Light.ttf",
+			fontWeight: 400,
+		},
+		{
+			src: "/fonts/Montserrat_Alternates/MontserratAlternates-Medium.ttf",
+			fontWeight: 700,
+		},
+	],
+});
+
+const styles = StyleSheet.create({
+	page: {
+		gap: 10,
+		fontFamily: "Montserrat_Alternates",
+		padding: 30,
+	},
+	title: {
+		fontSize: 24,
+		fontWeight: 700,
+		marginBottom: 10,
+	},
+	subtitle: {
+		fontSize: 18,
+		fontWeight: 400,
+		marginBottom: 10,
+	},
+	text: {
+		fontSize: 12,
+		fontWeight: 400,
+		marginBottom: 10,
+	},
+	image: {
+		width: 200,
+		aspectRatio: 1,
+		objectFit: "cover",
+		objectPosition: "top",
+		alignSelf: "center",
+	},
 });
 
 const SavePDF = ({ params }: Props) => {
@@ -47,15 +86,21 @@ const SavePDF = ({ params }: Props) => {
 	const savePDF = async () => {
 		const MyDocument = (
 			<Document>
-				<Page>
-					<Text fixed>{name}</Text>
+				<Page style={styles.page}>
+					<Text style={styles.title}>{name}</Text>
+					<Text style={styles.subtitle}>{componentPathTitle}</Text>
+					<Image src={componentPathImage} style={styles.image} />
+					<Text style={styles.text}>{componentPathTranscript}</Text>
+					<Text style={styles.subtitle}>{componentChoiceTitle}</Text>
+					<Image src={componentChoiceImage} style={styles.image} />
+					<Text style={styles.text}>{componentChoiceTranscript}</Text>
 				</Page>
 			</Document>
 		);
 
 		// Generate and download the PDF as a Blob
 		const blob = await pdf(MyDocument).toBlob();
-		saveAs(blob, "document_with_image.pdf");
+		saveAs(blob, `${coach}_${path}_pathway.pdf`);
 	};
 
 	console.table(PDF.component_choice);

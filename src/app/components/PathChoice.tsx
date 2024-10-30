@@ -7,7 +7,7 @@ import { useState } from "react";
 import CustomAudioPlayer from "./customAudioPlayer";
 
 const Path = ({ params }: Props) => {
-	const [content, setContent] = useState("text");
+	const [content, setContent] = useState("audio");
 	const { coach, path } = params;
 	const { details, detailsTitle, detailsAudio, detailsImage, PDF, color } =
 		useCoachDetails({ coach, path } as { coach: string; path: string });
@@ -46,7 +46,7 @@ const Path = ({ params }: Props) => {
 			)}
 			{content === "audio" && (
 				<>
-					<CustomAudioPlayer audioLink={detailsAudio} />
+					<CustomAudioPlayer audioLink={detailsAudio} audioTrans={details} />
 					<div className="row-start-2 col-start-2 lg:col-span-7 col-span-8 row-span-7 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">
 						<div className="w-full h-full relative rounded-md z-50">
 							<Image
@@ -54,7 +54,7 @@ const Path = ({ params }: Props) => {
 								alt={detailsTitle}
 								fill
 								objectFit="cover"
-								className="rounded-xl"
+								className="rounded-xl object-top"
 							/>
 						</div>
 					</div>

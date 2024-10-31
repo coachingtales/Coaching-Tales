@@ -95,14 +95,14 @@ const SavePDF = ({ params }: Props) => {
 			</h1>
 			<form
 				onSubmit={handleSubmit}
-				className="col-start-2 row-start-4 col-span-7  z-50 row-span-4 grid grid-cols-10 grid-rows-2"
+				className="col-start-2 row-start-4 col-span-8 z-50 row-span-4 grid grid-cols-10 grid-rows-2"
 			>
 				<input
 					type="email"
 					value={email}
 					onChange={handleChange}
 					placeholder="Enter your email"
-					className="px-4 py-2 border text-3xl border-gray-300 h-fit col-start-1 row-start-1 col-span-10 row-span-1 rounded"
+					className="px-4 py-2 border text-3xl border-gray-300 h-fit col-start-1 row-start-1 col-span-11 row-span-1 rounded"
 					required
 				/>
 				<div className="row-start-2 col-span-10 flex items-center justify-center row-span-1">

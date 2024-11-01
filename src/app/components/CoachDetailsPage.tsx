@@ -63,17 +63,22 @@ const CoachDetailsPage = ({ params }: Props) => {
 							>
 								<Link
 									href={`/${coach.url}/choose_path`}
-									className="pointer-events-auto text-5xl font-bold text-center"
+									className="pointer-events-auto text-4xl font-bold text-center"
 								>
 									{coach.name}
 								</Link>
-								<Image
-									className="scale-110"
-									src={coach.component_1.image_link}
-									alt={coach.name}
-									width={500}
-									height={500}
-								/>
+								<Link
+									href={`/${coach.url}/choose_path`}
+									className="pointer-events-auto "
+								>
+									<Image
+										className="scale-110"
+										src={coach.component_1.image_link}
+										alt={coach.name}
+										width={500}
+										height={500}
+									/>
+								</Link>
 							</div>
 						</>
 					);

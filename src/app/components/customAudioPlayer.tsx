@@ -4,11 +4,13 @@ import Image from "next/image";
 interface CustomAudioPlayerProps {
 	audioLink: string;
 	audioTrans: string;
+	onAudioEnd: () => void; // Callback function to be called when audio ends
 }
 
 export default function CustomAudioPlayer({
 	audioLink,
 	audioTrans,
+	onAudioEnd,
 }: CustomAudioPlayerProps) {
 	const audioRef = useRef<HTMLAudioElement | null>(null); // Nullable type
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -17,16 +19,51 @@ export default function CustomAudioPlayer({
 	const [duration, setDuration] = useState(0);
 	const [isMuted, setIsMuted] = useState(false);
 
+	// Auto-play the audio when the component is rendered
+	useEffect(() => {
+		const audio = audioRef.current;
+		if (!audio) return;
+
+		const handleCanPlayThrough = () => {
+			audio.play();
+			setIsPlaying(true);
+		};
+
+		audio.addEventListener("canplaythrough", handleCanPlayThrough);
+
+		return () => {
+			audio.removeEventListener("canplaythrough", handleCanPlayThrough);
+		};
+	}, []);
+
+	// Add event listener for audio end
+	useEffect(() => {
+		const audio = audioRef.current;
+		if (!audio) return;
+
+		const handleAudioEnd = () => {
+			setIsPlaying(false);
+			onAudioEnd(); // Call the callback function
+		};
+
+		audio.addEventListener("ended", handleAudioEnd);
+
+		return () => {
+			audio.removeEventListener("ended", handleAudioEnd);
+		};
+	}, [onAudioEnd]);
+
 	// Toggle play/pause
 	const togglePlayPause = () => {
-		if (audioRef.current) {
-			if (audioRef.current.paused) {
-				audioRef.current.play();
-				setIsPlaying(true);
-			} else {
-				audioRef.current.pause();
-				setIsPlaying(false);
-			}
+		const audio = audioRef.current;
+		if (!audio) return;
+
+		if (audio.paused) {
+			audio.play();
+			setIsPlaying(true);
+		} else {
+			audio.pause();
+			setIsPlaying(false);
 		}
 	};
 

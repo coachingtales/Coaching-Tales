@@ -23,6 +23,10 @@ const Path = ({ params }: Props) => {
 		? PDF.component_choice_2.title
 		: "";
 
+	const handleAudioEnd = () => {
+		setContent("next");
+	};
+
 	return (
 		<div className="w-screen h-screen grid grid-rows-10 grid-cols-10 relative overflow-hidden bg-[#F5F5F5]">
 			<div
@@ -46,8 +50,12 @@ const Path = ({ params }: Props) => {
 			)}
 			{content === "audio" && (
 				<>
-					<CustomAudioPlayer audioLink={detailsAudio} audioTrans={details} />
-					<div className="row-start-2 col-start-2 lg:col-span-7 col-span-8 row-span-7 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">
+					<CustomAudioPlayer
+						audioLink={detailsAudio}
+						audioTrans={details}
+						onAudioEnd={handleAudioEnd} // Pass the callback function
+					/>
+					<div className="row-start-2 col-start-2 lg:col-span-7 col-span-8 row-span-7 lg:row-span-7 lg:row-start-3 lg:col-start-2 overflow-hidden z-50">
 						<div className="w-full h-full relative rounded-md z-50">
 							<Image
 								src={detailsImage}
@@ -79,6 +87,7 @@ const Path = ({ params }: Props) => {
 			<div className="lg:row-start-2 z-50 lg:row-span-8 lg:col-start-10 col-start-2 row-start-10 mb-10 lg:mb-0 lg:mr-10 col-span-8 row-span-1 flex-row lg:flex-col flex items-center justify-between">
 				<button
 					type="button"
+					title="Transcript"
 					onClick={() => setContent("text")}
 					className="z-50 bg-[#F5F5F5] p-2 rounded-xl font-bold w-fit shadow-lg"
 				>
@@ -92,6 +101,7 @@ const Path = ({ params }: Props) => {
 				</button>
 				<button
 					type="button"
+					title="Audio"
 					onClick={() => setContent("audio")}
 					className="z-50 bg-[#F5F5F5] p-2 rounded-xl font-bold w-fit shadow-lg"
 				>
@@ -105,6 +115,7 @@ const Path = ({ params }: Props) => {
 				<button
 					type="button"
 					onClick={() => setContent("next")}
+					title="Next Choice"
 					className="z-50 bg-[#F5F5F5] p-2 rounded-xl font-bold w-fit shadow-lg"
 				>
 					<Image

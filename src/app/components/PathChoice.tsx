@@ -63,14 +63,14 @@ const Path = ({ params }: Props) => {
 			{content === "next" && (
 				<>
 					<Link
-						className="p-4 rounded-xl z-50 font-bold text-2xl bg-[#F5F5F5] text-center shadow-lg col-start-3 lg:col-start-4 lg:col-span-4 row-start-2 lg:row-start-4 col-span-6 flex justify-center items-center"
+						className="p-4 rounded-xl z-50 font-bold text-2xl border-2 border-slate-200  text-center shadow-lg col-start-3 lg:col-start-4 lg:col-span-4 row-start-2 lg:row-start-4 col-span-6 flex justify-center items-center"
 						href={`/${coach}/choose_path/${path}/choice_1`}
 					>
 						{coachChoice1}
 					</Link>
 					<Link
 						href={`/${coach}/choose_path/${path}/choice_2`}
-						className="p-2 z-50 rounded-xl font-bold text-2xl bg-[#F5F5F5] text-center shadow-lg lg:col-start-4 col-start-3 row-start-4 lg:row-start-6 col-span-6 lg:col-span-4 flex justify-center items-center"
+						className="p-2 z-50 rounded-xl font-bold text-2xl border-2 border-slate-200 text-center shadow-lg lg:col-start-4 col-start-3 row-start-4 lg:row-start-6 col-span-6 lg:col-span-4 flex justify-center items-center"
 					>
 						{coachChoice2}
 					</Link>
@@ -80,7 +80,7 @@ const Path = ({ params }: Props) => {
 				<button
 					type="button"
 					onClick={() => setContent("text")}
-					className="text-slate-800 z-50 p-2 bg-[#F5F5F5] rounded-xl font-bold w-fit text-2xl text-center shadow-lg"
+					className="z-50 bg-[#F5F5F5] p-2 rounded-xl font-bold w-fit shadow-lg"
 				>
 					<Image
 						priority
@@ -93,7 +93,7 @@ const Path = ({ params }: Props) => {
 				<button
 					type="button"
 					onClick={() => setContent("audio")}
-					className="text-slate-800 z-50 p-2 bg-[#F5F5F5] rounded-xl font-bold w-fit text-2xl text-center shadow-lg"
+					className="z-50 bg-[#F5F5F5] p-2 rounded-xl font-bold w-fit shadow-lg"
 				>
 					<Image
 						src="/icons/headphones.png"
@@ -105,7 +105,7 @@ const Path = ({ params }: Props) => {
 				<button
 					type="button"
 					onClick={() => setContent("next")}
-					className="text-slate-800 z-50 bg-[#F5F5F5] p-2 rounded-xl font-bold w-fit text-2xl text-center shadow-lg"
+					className="z-50 bg-[#F5F5F5] p-2 rounded-xl font-bold w-fit shadow-lg"
 				>
 					<Image
 						src="/icons/next.png"

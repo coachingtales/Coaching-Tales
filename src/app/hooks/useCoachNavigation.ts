@@ -15,7 +15,7 @@ const useCoachNavigation = () => {
 		setLoading(true);
 		setTimeout(() => {
 			if (id === coachData.details.length - 1) {
-				setId(0);
+				setId(coachData.details.length - 1);
 			} else {
 				setId(id + 1);
 			}
@@ -29,7 +29,7 @@ const useCoachNavigation = () => {
 		setLoading(true);
 		setTimeout(() => {
 			if (id === 0) {
-				setId(coachData.details.length - 1);
+				setId(0);
 			} else {
 				setId(id - 1);
 			}

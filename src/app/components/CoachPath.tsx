@@ -30,10 +30,10 @@ const CoachPath = ({ params }: Props) => {
 					}}
 				/>
 				<div className="z-50 w-full h-full grid grid-cols-10 grid-rows-10 gap-4">
-					<h2 className="z-50 text-5xl font-bold col-start-3 text-nowrap text-center lg:text-left row-start-2 col-span-6 lg:row-start-2 lg:col-start-6">
+					<h2 className="z-50 text-4xl font-bold col-start-3 text-nowrap text-center lg:text-left row-start-2 col-span-6 lg:row-start-3 lg:col-start-6">
 						{name}
 					</h2>
-					<div className="z-50 flex flex-col gap-2 text-left lg:row-start-3 lg:row-span-2 justify-center items-start text-2xl row-start-2 col-start-6 row-span-4 col-span-4">
+					<div className="z-50 flex flex-col gap-2 text-left lg:row-start-4 lg:row-span-2 justify-center items-start text-2xl row-start-2 col-start-6 row-span-4 col-span-4">
 						{location && (
 							<p>
 								Location: <span className="font-bold">{location}</span>
@@ -54,14 +54,14 @@ const CoachPath = ({ params }: Props) => {
 						<Image src={coachImage} alt={name} width={500} height={500} />
 					</div>
 					<Link
-						className="text-2xl z-50 pointer-events-auto row-start-5 col-start-6 col-span-4 flex justify-center items-center rounded-xl font-bold text-center shadow-2xl border-2 border-slate-200"
+						className="text-2xl z-50 pointer-events-auto row-start-6 col-start-6 col-span-4 flex justify-center items-center rounded-xl font-bold text-center shadow-2xl border-2 border-slate-200"
 						href={`/${coach}/choose_path/Football`}
 						style={{ background: color }}
 					>
 						Football
 					</Link>
 					<Link
-						className="text-2xl z-50 col-start-6 col-span-4 row-start-6 flex justify-center items-center pointer-events-auto rounded-xl font-bold text-center shadow-2xl border-2 border-slate-200"
+						className="text-2xl z-50 col-start-6 col-span-4 row-start-7 flex justify-center items-center pointer-events-auto rounded-xl font-bold text-center shadow-2xl border-2 border-slate-200"
 						href={`/${coach}/choose_path/Culture`}
 						style={{ background: color }}
 					>

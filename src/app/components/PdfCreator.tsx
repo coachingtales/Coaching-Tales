@@ -29,7 +29,6 @@ const PdfCreator = async ({
 	choiceTitle,
 	choiceTranscript,
 	choiceImage,
-	email,
 }: PDFProps) => {
 	Font.register({
 		family: "Montserrat_Alternates",

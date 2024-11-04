@@ -50,8 +50,16 @@ const CoachPath = ({ params }: Props) => {
 							</p>
 						)}
 					</div>
-					<div className="relative row-start-3 scale-125 lg:scale-100 lg:row-start-1 col-start-1 col-span-7 row-span-10">
-						<Image src={coachImage} alt={name} width={500} height={500} />
+					<div className="relative row-start-3 scale-125 lg:scale-100 lg:row-start-1 xl:row-start-2 xl:row-span-9 xl:col-span-8 xl:col-start-3 col-start-1 col-span-7 row-span-10">
+						{coachImage && (
+							<Image
+								src={coachImage}
+								alt={name}
+								width={500}
+								height={500}
+								priority
+							/>
+						)}
 					</div>
 					<Link
 						className="text-2xl z-50 pointer-events-auto row-start-6 col-start-6 col-span-4 flex justify-center items-center rounded-xl font-bold text-center shadow-2xl border-2 border-slate-200"

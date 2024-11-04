@@ -1,5 +1,6 @@
 import Link from "next/link";
 import coachData from "@/app/data/coachData.json";
+import Image from "next/image";
 
 const colors = [
 	coachData.details[0].hex,
@@ -13,6 +14,12 @@ export default function Home() {
 			<h1 className="font-bold z-10 col-start-1 row-start-1 row-span-2 flex justify-center items-center col-span-7 text-6xl text-slate-800">
 				Coaching Tales
 			</h1>
+			<Image
+				className="z-50 col-start-2 col-span-5 scale-75 lg:col-span-3 lg:col-start-3 row-start-3 row-span-4"
+				src="/icons/strategy.png"
+				alt="strategy"
+				fill
+			/>
 			{colors.map((color, index) => {
 				return (
 					<span
@@ -26,9 +33,15 @@ export default function Home() {
 			})}
 			<Link
 				href="/chooseCoach"
-				className="text-slate-800 rounded-xl h-fit p-4 font-bold text-2xl text-center border-[#B4B4B4] border-[1px]  bg-[#ebeae5] row-start-10 col-start-7 lg:col-start-8 lg:col-span-3 col-span-4 shadow-lg"
+				className="text-slate-800 flex flex-row justify-center items-center w-full gap-5 text-nowrap rounded-xl h-fit p-4 font-bold text-2xl text-center border-[#B4B4B4] border-[1px]  bg-[#ebeae5] row-start-10 col-start-6 lg:col-start-7 lg:col-span-4 col-span-5 shadow-lg"
 			>
 				Start your journey
+				<Image
+					src="/icons/letsbegin.png"
+					alt="start icon"
+					width={48}
+					height={48}
+				/>
 			</Link>
 		</main>
 	);

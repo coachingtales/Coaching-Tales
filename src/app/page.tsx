@@ -15,7 +15,7 @@ export default function Home() {
 				Coaching Tales
 			</h1>
 			<Image
-				className="z-50 col-start-2 col-span-5 scale-75 lg:col-span-3 lg:col-start-3 row-start-3 row-span-4"
+				className="z-50 col-start-2 col-span-5 scale-75 lg:col-span-3 lg:col-start-3 xl:col-span-3 xl:col-start-3 row-start-3 row-span-4 xl:row-span-7 xl:row-start-2"
 				src="/icons/strategy.png"
 				alt="strategy"
 				fill

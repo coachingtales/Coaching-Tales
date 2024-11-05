@@ -56,7 +56,7 @@ const EndPage = ({ params }: Props) => {
 			<h2 className="z-50 col-start-2 text-center lg:col-start-2 row-start-4 col-span-3 row-span-1 lg:row-span-3 flex justify-center items-center text-xl">
 				{componentChoiceTitle}
 			</h2>
-			<div className="z-50 col-start-5 m-4 lg:col-start-5 lg:row-span-6 w-[60%] xl:w-[30%] gap-4 h-full lg:row-start-3 row-start-3 flex flex-col justify-center items-center row-span-5 col-span-5 lg:col-span-4 relative">
+			<div className="z-50 col-start-5 m-4 lg:col-start-5 lg:row-span-6 w-[40%] xl:w-[30%] gap-4 h-full lg:row-start-3 row-start-3 flex flex-col justify-center items-center row-span-5 col-span-5 lg:col-span-4 relative">
 				<div className="relative w-full aspect-square shadow-xl">
 					<Image
 						className="rounded-xl"
@@ -85,7 +85,7 @@ const EndPage = ({ params }: Props) => {
 				href="/chooseCoach"
 				className="z-50 rounded-xl h-full p-4 flex justify-center items-center row-start-9 row-span-2 col-start-4 col-span-4 m-4"
 			>
-				<span className="text-slate-800 z-50 rounded-xl h-fit p-4 font-bold text-2xl text-center border-slate-200 border-2 shadow-lg">
+				<span className="text-slate-800 z-50 rounded-xl h-fit p-4 -translate-y-2 font-bold text-2xl text-center border-slate-200 border-2 shadow-lg">
 					Play again
 				</span>
 			</Link>

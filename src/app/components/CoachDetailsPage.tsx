@@ -19,7 +19,7 @@ const CoachDetailsPage = ({ params }: Props) => {
 		<div className="w-screen h-screen relative grid grid-rows-[100px_1fr] bg-[#F5F5F5] overflow-hidden pointer-events-none">
 			<button
 				type="button"
-				className="z-50 absolute bottom-5 right-5 pointer-events-auto"
+				className="z-50 absolute bottom-10 right-10 w-[10vmin] pointer-events-auto"
 				onClick={previousCoach}
 			>
 				<Image
@@ -31,7 +31,7 @@ const CoachDetailsPage = ({ params }: Props) => {
 			</button>
 			<button
 				type="button"
-				className="z-50 absolute bottom-5 left-5 pointer-events-auto"
+				className="z-50 absolute bottom-10 left-10 w-[10vmin] pointer-events-auto"
 				onClick={nextCoachDetails}
 			>
 				<Image src="/icons/left.png" alt="left arrow" width={48} height={48} />
@@ -42,12 +42,11 @@ const CoachDetailsPage = ({ params }: Props) => {
 
 			<div className="relative">
 				{coachData.details.map((coach, index) => {
-					const key = coach.name + index;
+					const uniqueKey = `coach-${index}`; // Use a clear, consistent unique key
 
 					return (
-						<>
+						<div key={uniqueKey}>
 							<div
-								key={key}
 								className="w-[100vw] h-[100vw] rounded-full absolute scale-125 lg:scale-100 translate-y-[15%] lg:translate-y-0 transition-all duration-300 ease-in-out shadow-2xl"
 								style={{
 									left: index === id ? "0%" : `${stagger[index]}`,
@@ -56,7 +55,6 @@ const CoachDetailsPage = ({ params }: Props) => {
 								}}
 							/>
 							<div
-								key={key}
 								className="fixed w-full h-full flex flex-col justify-center items-center lg:flex-row-reverse transition-all duration-300 ease-in-out"
 								style={{
 									transform: `${id === index ? "translateX(0)" : "translateX(-100vw)"}`,
@@ -79,10 +77,11 @@ const CoachDetailsPage = ({ params }: Props) => {
 										alt={coach.name}
 										width={500}
 										height={500}
+										priority
 									/>
 								</Link>
 							</div>
-						</>
+						</div>
 					);
 				})}
 			</div>

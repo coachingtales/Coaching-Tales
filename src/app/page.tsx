@@ -3,46 +3,61 @@ import coachData from "@/app/data/coachData.json";
 import Image from "next/image";
 
 const colors = [
-	coachData.details[0].hex,
-	coachData.details[1].hex,
-	coachData.details[2].hex,
+	{
+		hex: coachData.details[0].hex ?? "#F2CC8F",
+		position: "left-[20%] top-[10%]",
+		z: "30",
+	},
+	{
+		hex: coachData.details[1].hex ?? "#E07A5F",
+		position: "left-[25%] top-[20%]",
+		z: "20",
+	},
+	{
+		hex: coachData.details[2].hex ?? "#81B29A",
+		position: "left-[30%] top-[30%]",
+		z: "10",
+	},
 ];
 
 export default function Home() {
 	return (
-		<main className="relative w-screen h-screen p-4 grid grid-cols-10 grid-rows-10 bg-[#dfded4] overflow-hidden">
-			<h1 className="font-bold z-10 col-start-1 row-start-1 row-span-2 flex justify-center items-center col-span-7 text-6xl text-slate-800">
-				Coaching Tales
-			</h1>
-			<Image
-				className="z-50 col-start-2 col-span-5 scale-75 lg:col-span-3 lg:col-start-3 xl:col-span-3 xl:col-start-3 row-start-3 row-span-4 xl:row-span-7 xl:row-start-2"
-				src="/icons/strategy.png"
-				alt="strategy"
-				fill
-			/>
-			{colors.map((color, index) => {
-				return (
-					<span
-						key={color}
-						className={`w-[95dvw] h-screen absolute rounded-br-full shadow-2xl ${index === 2 ? "left-[-20%]" : index === 1 ? "left-[-10%]" : ""}`}
-						style={{
-							backgroundColor: color,
-						}}
-					/>
-				);
-			})}
-			<Link
-				href="/chooseCoach"
-				className="text-slate-800 flex flex-row justify-center items-center w-full gap-5 text-nowrap rounded-xl h-fit p-4 font-bold text-2xl text-center border-[#B4B4B4] border-[1px]  bg-[#ebeae5] row-start-10 col-start-6 lg:col-start-7 lg:col-span-4 col-span-5 shadow-lg"
-			>
-				Start your journey
-				<Image
-					src="/icons/letsbegin.png"
-					alt="start icon"
-					width={48}
-					height={48}
+		<main className="w-screen h-screen grid place-content-center relative overflow-hidden bg-[#EEEDEA]">
+			{colors.map((color) => (
+				<div
+					key={color.hex}
+					className={`${color.position} -translate-x-1/2 blur-sm -translate-y-1/2 rounded-full w-[140vw] h-[140vw] absolute shadow-xl`}
+					style={{
+						background: color.hex,
+						zIndex: color.z,
+					}}
 				/>
-			</Link>
+			))}
+			<div className="flex xl:flex-row flex-col gap-4 items-center justify-center">
+				<h1 className="text-[10vmin] z-50 text-slate-800 font-bold">
+					Coaching Tales
+				</h1>
+				<Image
+					src={"/icons/strategy.png"}
+					alt="clipboard icon"
+					width={400}
+					height={400}
+					className="w-[30vmin] rotate-[10deg] z-50"
+				/>
+			</div>
+			<button
+				type="button"
+				className="hover:-translate-y-1 transition-all duration-300 ease-in-out active:scale-95 px-4 py-2 border-2 text-slate-800 bg-[#EEEDEA] text-[4vmin] lg:text-[3vmin] z-50 border-slate-50 flex flex-row justify-center items-center gap-4 rounded-lg shadow-lg absolute bottom-5 right-5"
+			>
+				<Link href={"/chooseCoach"}>Let's Begin</Link>
+				<Image
+					src={"/icons/letsbegin.png"}
+					alt="Footballer icon"
+					width={100}
+					height={100}
+					className="w-[6vmin]"
+				/>
+			</button>
 		</main>
 	);
 }

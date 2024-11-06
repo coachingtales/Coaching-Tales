@@ -20,15 +20,21 @@ export default function CustomAudioPlayer({
 	const [currentTime, setCurrentTime] = useState(0);
 	const [duration, setDuration] = useState(0);
 	const [isMuted, setIsMuted] = useState(false);
+	const [autoplayBlocked, setAutoplayBlocked] = useState(false);
 
 	// Auto-play the audio when the component is rendered
 	useEffect(() => {
 		const audio = audioRef.current;
 		if (!audio) return;
 
-		const handleCanPlayThrough = () => {
-			audio.play();
-			setIsPlaying(true);
+		const handleCanPlayThrough = async () => {
+			try {
+				await audio.play();
+				setIsPlaying(true);
+			} catch (error) {
+				setAutoplayBlocked(true);
+				console.warn("User gesture needed to start playback.");
+			}
 		};
 
 		audio.addEventListener("canplaythrough", handleCanPlayThrough);
@@ -55,17 +61,19 @@ export default function CustomAudioPlayer({
 		};
 	}, [onAudioEnd]);
 
-	// Toggle play/pause
 	const togglePlayPause = () => {
 		const audio = audioRef.current;
 		if (!audio) return;
 
-		if (audio.paused) {
-			audio.play();
-			setIsPlaying(true);
-		} else {
+		if (isPlaying) {
 			audio.pause();
 			setIsPlaying(false);
+		} else {
+			audio.play().catch(() => {
+				console.warn("User gesture needed to start playback.");
+			});
+			setIsPlaying(true);
+			setAutoplayBlocked(false); // Clear any autoplay block if user starts manually
 		}
 	};
 
@@ -112,64 +120,92 @@ export default function CustomAudioPlayer({
 
 	return (
 		<div
-			className={` ${opacity === "audio" ? "opacity-100" : "opacity-0"} w-full h-full lg:row-start-9 lg:col-span-7 backdrop-blur-sm lg:col-start-2 row-start-8 col-start-2 z-[100] row-span-1 col-span-8 flex items-center rounded-t-none p-4 rounded-lg shadow-lg space-x-4`}
+			className={` ${opacity === "audio" ? "opacity-100" : "opacity-0"} relative w-full h-full lg:row-start-9 lg:col-span-7 backdrop-blur-sm lg:col-start-2 row-start-8 col-start-2 z-[100] row-span-1 col-span-8 flex items-center rounded-t-none p-4 rounded-lg shadow-lg space-x-4`}
 		>
 			{/* Play/Pause Button */}
-			<button
-				type="button"
-				onClick={togglePlayPause}
-				className="text-white text-4xl invert"
-			>
-				{isPlaying ? (
-					<Image
-						src="/icons/pauseButton.png"
-						alt="pause"
-						width={48}
-						height={48}
-					/>
-				) : (
+			{autoplayBlocked && (
+				<button
+					className="w-full h-full absolute flex justify-center items-center invert top-0 left-0 rounded-b-lg text-3xl"
+					type="button"
+					onClick={togglePlayPause}
+				>
 					<Image
 						src="/icons/playButton.png"
 						alt="play"
 						width={48}
 						height={48}
 					/>
-				)}
-			</button>
+				</button>
+			)}
+			{!autoplayBlocked && (
+				<>
+					<button
+						type="button"
+						onClick={togglePlayPause}
+						className="text-white text-4xl invert"
+					>
+						{isPlaying ? (
+							<Image
+								src="/icons/pauseButton.png"
+								alt="pause"
+								width={48}
+								height={48}
+							/>
+						) : (
+							<Image
+								src="/icons/playButton.png"
+								alt="play"
+								width={48}
+								height={48}
+							/>
+						)}
+					</button>
 
-			{/* Seek Bar */}
-			<input
-				type="range"
-				min="0"
-				max="100"
-				value={(currentTime / duration) * 100 || 0}
-				onChange={handleSeek}
-				className="w-full h-2 bg-gray-500 rounded-lg appearance-none cursor-pointer"
-			/>
+					{/* Seek Bar */}
+					<input
+						type="range"
+						min="0"
+						max="100"
+						value={(currentTime / duration) * 100 || 0}
+						onChange={handleSeek}
+						className="w-full h-2 bg-gray-500 rounded-lg appearance-none cursor-pointer"
+					/>
 
-			{/* Volume Control */}
-			<input
-				type="range"
-				min="0"
-				max="1"
-				step="0.1"
-				value={volume}
-				onChange={handleVolumeChange}
-				className="w-20 h-2 bg-gray-500 rounded-lg appearance-none cursor-pointer"
-			/>
+					{/* Volume Control */}
+					<input
+						type="range"
+						min="0"
+						max="1"
+						step="0.1"
+						value={volume}
+						onChange={handleVolumeChange}
+						className="w-20 h-2 bg-gray-500 rounded-lg appearance-none cursor-pointer"
+					/>
 
-			{/* Mute Button */}
-			<button
-				type="button"
-				onClick={toggleMute}
-				className="text-white text-4xl invert"
-			>
-				{isMuted ? (
-					<Image src="/icons/muted.png" alt="muted" width={48} height={48} />
-				) : (
-					<Image src="/icons/sound.png" alt="un-muted" width={48} height={48} />
-				)}
-			</button>
+					{/* Mute Button */}
+					<button
+						type="button"
+						onClick={toggleMute}
+						className="text-white text-4xl invert"
+					>
+						{isMuted ? (
+							<Image
+								src="/icons/muted.png"
+								alt="muted"
+								width={48}
+								height={48}
+							/>
+						) : (
+							<Image
+								src="/icons/sound.png"
+								alt="un-muted"
+								width={48}
+								height={48}
+							/>
+						)}
+					</button>
+				</>
+			)}
 
 			{/* Hidden Audio Element */}
 			<audio ref={audioRef} src={audioLink}>

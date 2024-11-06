@@ -69,15 +69,16 @@ const CoachDetailsPage = ({ params }: Props) => {
 								</Link>
 								<Link
 									href={`/${coach.url}/choose_path`}
-									className="pointer-events-auto "
+									className="pointer-events-auto relative"
 								>
 									<Image
 										className="scale-110"
 										src={coach.component_1.image_link}
 										alt={coach.name}
-										width={500}
-										height={500}
 										priority
+										width={500}
+										height={300}
+										style={{ width: "500px", height: "auto" }}
 									/>
 								</Link>
 							</div>

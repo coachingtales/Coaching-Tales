@@ -53,13 +53,15 @@ const Path = ({ params }: Props) => {
 			{content === "audio" && (
 				<div className="row-start-2 col-start-2 lg:col-span-7 col-span-8 row-span-7 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">
 					<div className="w-full h-full relative rounded-md">
-						<Image
-							src={detailsImage}
-							alt={detailsTitle}
-							fill
-							objectFit="cover"
-							className="rounded-xl object-top"
-						/>
+						{detailsImage && (
+							<Image
+								src={detailsImage}
+								alt={detailsTitle}
+								fill
+								style={{ objectFit: "cover" }}
+								className="rounded-xl object-top"
+							/>
+						)}
 					</div>
 				</div>
 			)}

@@ -58,24 +58,30 @@ const EndPage = ({ params }: Props) => {
 			</h2>
 			<div className="z-50 col-start-5 m-4 lg:col-start-5 lg:row-span-6 w-[40%] xl:w-[30%] gap-4 h-full lg:row-start-3 row-start-3 flex flex-col justify-center items-center row-span-5 col-span-5 lg:col-span-4 relative">
 				<div className="relative w-full aspect-square shadow-xl">
-					<Image
-						className="rounded-xl"
-						src={componentChoiceImage}
-						fill
-						alt={name}
-						objectFit="cover"
-						objectPosition="top"
-					/>
+					{componentChoiceImage && (
+						<Image
+							className="rounded-xl"
+							src={componentChoiceImage}
+							fill
+							alt={name}
+							style={{ objectFit: "cover", objectPosition: "top" }}
+							priority
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+						/>
+					)}
 				</div>
 				<div className="relative w-full aspect-square shadow-xl">
-					<Image
-						className="rounded-xl"
-						src={componentPathImage}
-						fill
-						alt={name}
-						objectFit="cover"
-						objectPosition="top"
-					/>
+					{componentPathImage && (
+						<Image
+							className="rounded-xl"
+							src={componentPathImage}
+							fill
+							alt={name}
+							style={{ objectFit: "cover", objectPosition: "top" }}
+							priority
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+						/>
+					)}
 				</div>
 			</div>
 			<h2 className="z-50 col-start-2 lg:col-start-2 lg:row-span-3 row-start-6 text-center col-span-3 row-span-1 flex justify-center items-center text-xl">

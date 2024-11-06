@@ -109,7 +109,7 @@ export default function CustomAudioPlayer({
 	};
 
 	return (
-		<div className="w-full h-full lg:row-start-9 lg:col-span-7 backdrop-blur-md lg:col-start-2 row-start-8 col-start-2 z-[100] row-span-1 col-span-8 flex items-center rounded-t-none p-4 rounded-lg shadow-lg space-x-4">
+		<div className="w-full h-full lg:row-start-9 lg:col-span-7 backdrop-blur-sm lg:col-start-2 row-start-8 col-start-2 z-[100] row-span-1 col-span-8 flex items-center rounded-t-none p-4 rounded-lg shadow-lg space-x-4">
 			{/* Play/Pause Button */}
 			<button
 				type="button"

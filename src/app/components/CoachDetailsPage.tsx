@@ -19,7 +19,7 @@ const CoachDetailsPage = ({ params }: Props) => {
 		<div className="w-screen h-screen relative grid grid-rows-[100px_1fr] bg-[#F5F5F5] overflow-hidden pointer-events-none">
 			<button
 				type="button"
-				className="z-50 absolute bottom-10 right-10 w-[10vmin] pointer-events-auto"
+				className="z-50 absolute bottom-16 right-16 w-[10vmin] pointer-events-auto"
 				onClick={previousCoach}
 			>
 				<Image
@@ -31,7 +31,7 @@ const CoachDetailsPage = ({ params }: Props) => {
 			</button>
 			<button
 				type="button"
-				className="z-50 absolute bottom-10 left-10 w-[10vmin] pointer-events-auto"
+				className="z-50 absolute bottom-16 left-16 w-[10vmin] pointer-events-auto"
 				onClick={nextCoachDetails}
 			>
 				<Image src="/icons/left.png" alt="left arrow" width={48} height={48} />

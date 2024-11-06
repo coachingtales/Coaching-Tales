@@ -4,13 +4,15 @@ import Image from "next/image";
 interface CustomAudioPlayerProps {
 	audioLink: string;
 	audioTrans: string;
-	onAudioEnd: () => void; // Callback function to be called when audio ends
+	onAudioEnd: () => void;
+	opacity: string; // Callback function to be called when audio ends
 }
 
 export default function CustomAudioPlayer({
 	audioLink,
 	audioTrans,
 	onAudioEnd,
+	opacity,
 }: CustomAudioPlayerProps) {
 	const audioRef = useRef<HTMLAudioElement | null>(null); // Nullable type
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -109,7 +111,9 @@ export default function CustomAudioPlayer({
 	};
 
 	return (
-		<div className="w-full h-full lg:row-start-9 lg:col-span-7 backdrop-blur-sm lg:col-start-2 row-start-8 col-start-2 z-[100] row-span-1 col-span-8 flex items-center rounded-t-none p-4 rounded-lg shadow-lg space-x-4">
+		<div
+			className={` ${opacity === "audio" ? "opacity-100" : "opacity-0"} w-full h-full lg:row-start-9 lg:col-span-7 backdrop-blur-sm lg:col-start-2 row-start-8 col-start-2 z-[100] row-span-1 col-span-8 flex items-center rounded-t-none p-4 rounded-lg shadow-lg space-x-4`}
+		>
 			{/* Play/Pause Button */}
 			<button
 				type="button"

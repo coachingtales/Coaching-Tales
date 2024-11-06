@@ -29,6 +29,12 @@ const Path = ({ params }: Props) => {
 
 	return (
 		<div className="w-screen h-screen grid grid-rows-10 grid-cols-10 relative overflow-hidden bg-[#F5F5F5]">
+			<CustomAudioPlayer
+				opacity={content}
+				audioLink={detailsAudio}
+				audioTrans={details}
+				onAudioEnd={handleAudioEnd} // Pass the callback function
+			/>
 			<div
 				className="absolute w-[1000px] h-[1000px] z-0 rounded-full bottom-1/4 lg:bottom-[-10%] lg:right-[15%] right-0"
 				style={{ background: color }}
@@ -49,24 +55,17 @@ const Path = ({ params }: Props) => {
 				</p>
 			)}
 			{content === "audio" && (
-				<>
-					<CustomAudioPlayer
-						audioLink={detailsAudio}
-						audioTrans={details}
-						onAudioEnd={handleAudioEnd} // Pass the callback function
-					/>
-					<div className="row-start-2 col-start-2 lg:col-span-7 col-span-8 row-span-7 lg:row-span-7 lg:row-start-3 lg:col-start-2 overflow-hidden z-50">
-						<div className="w-full h-full relative rounded-md z-50">
-							<Image
-								src={detailsImage}
-								alt={detailsTitle}
-								fill
-								objectFit="cover"
-								className="rounded-xl object-top"
-							/>
-						</div>
+				<div className="row-start-2 col-start-2 lg:col-span-7 col-span-8 row-span-7 lg:row-span-7 lg:row-start-3 lg:col-start-2 overflow-hidden z-50">
+					<div className="w-full h-full relative rounded-md z-50">
+						<Image
+							src={detailsImage}
+							alt={detailsTitle}
+							fill
+							objectFit="cover"
+							className="rounded-xl object-top"
+						/>
 					</div>
-				</>
+				</div>
 			)}
 			{content === "next" && (
 				<>

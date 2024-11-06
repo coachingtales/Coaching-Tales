@@ -82,7 +82,7 @@ const EndPage = ({ params }: Props) => {
 				{componentPathTitle}
 			</h2>
 			<Link
-				href="/chooseCoach"
+				href="/"
 				className="z-50 rounded-xl h-full p-4 flex justify-center items-center row-start-9 row-span-2 col-start-4 col-span-4 m-4"
 			>
 				<span className="text-slate-800 z-50 rounded-xl h-fit p-4 -translate-y-2 font-bold text-2xl text-center border-slate-200 border-2 shadow-lg">

@@ -47,7 +47,7 @@ export default function Home() {
 			</div>
 			<button
 				type="button"
-				className="hover:-translate-y-1 transition-all duration-300 ease-in-out active:scale-95 px-4 py-2 border-2 text-slate-800 bg-[#EEEDEA] text-[4vmin] lg:text-[3vmin] z-50 border-slate-50 flex flex-row justify-center items-center gap-4 rounded-lg shadow-lg absolute bottom-5 right-5"
+				className="hover:-translate-y-1 transition-all duration-300 ease-in-out active:scale-95 px-4 py-2 border-2 text-slate-800 bg-[#EEEDEA] text-[4vmin] lg:text-[3vmin] z-50 border-slate-50 flex flex-row justify-center items-center gap-4 rounded-lg shadow-lg absolute bottom-10 right-10"
 			>
 				<Link href={"/chooseCoach"}>Let's Begin</Link>
 				<Image

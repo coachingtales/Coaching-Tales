@@ -42,6 +42,15 @@ Using Figma for prototyping and a component-based architecture, the interface is
 - **Contrast & Accessibility Testing**: The site is regularly tested to meet WCAG 2.1 standards, ensuring an inclusive experience.
 - **Component Flexibility**: Built with adaptable components, allowing future updates, such as video playback, without a full redesign.
 
+## Project details for future developers.
+
+The current project is set-up as a PWA or progressive web app for iPad. Future plans would include creating a mobile and desktop friendly version. The two main files for the PWA are the **manifest.json** and the **ServiceWorkerRegistrar.tsx** in the components folder. Other features -
+
+**useCoachDetails.ts**
+This custom hook, designed to manage and provide detailed information about a specific coach. By taking parameters such as **coach**, **path**, and **choices**, this hook fetches and sets various coach-related details from a data source (**coachData.json**). It then returns these details in a structured format, including text descriptions, titles, and potential audio content. The **useCoachDetails** hook is intended for use in components where specific contextual or media information about a coach is needed, enhancing interactivity and user experience by dynamically loading relevant content based on the provided parameters.
+
+**useCoachNavigation.ts**
+This custom hook, which facilitates navigation through various coach-related content within the application. It manages several states, including the current coach ID, page transition effects, loading states, and tracking whether the user is on the first page. The hook allows for smooth transitions between coach details by setting the appropriate coach data URL and updating state as users navigate. It is especially useful for components that require organized navigation and loading indicators when displaying sequential or paginated coach content.
 
 ## Tech Stack
 
@@ -59,7 +68,6 @@ DevSecOps
 - Vercel
 - Husky
 - Snyk
-- Sentry
 - GitGuardian
 
 Collaborations & Prototypes

@@ -46,9 +46,16 @@ const Path = ({ params }: Props) => {
 				</h1>
 			)}
 			{content === "text" && (
-				<p className="row-start-2 overflow-scroll max-h-96 text-xl col-start-2 lg:col-span-7 col-span-8 row-span-8 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">
-					{details}
-				</p>
+				<div className="row-start-2 overflow-scroll max-h-96 text-xl col-start-2 lg:col-span-7 col-span-8 row-span-8 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">
+					{details.split("\n\n").map((paragraph, index) => {
+						const key = `paragraph-${index}`;
+						return (
+							<p key={key} className="mb-2">
+								{paragraph}
+							</p>
+						);
+					})}
+				</div>
 			)}
 			{content === "audio" && (
 				<div className="row-start-2 col-start-2 lg:col-span-7 col-span-8 row-span-7 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">

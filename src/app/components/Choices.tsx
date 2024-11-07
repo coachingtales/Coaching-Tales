@@ -24,7 +24,7 @@ const Path = ({ params }: Props) => {
 	};
 
 	return (
-		<div className="w-screen h-screen grid grid-rows-10 grid-cols-10 relative overflow-hidden bg-[#F5F5F5]">
+		<div className="w-screen h-screen grid p-2 grid-rows-10 grid-cols-10 relative overflow-hidden bg-[#F5F5F5]">
 			<CustomAudioPlayer
 				audioLink={detailsAudio}
 				audioTrans={details}
@@ -32,7 +32,7 @@ const Path = ({ params }: Props) => {
 				opacity={content}
 			/>
 			<div
-				className="absolute w-[1000px] scale-110 h-[1000px] z-0 rounded-full bottom-1/4 lg:bottom-[-10%] lg:right-[15%] right-0"
+				className="absolute w-[100vw] scale-125 lg:scale-110 h-[100vw] z-0 rounded-full bottom-1/3 lg:bottom-[-10%] lg:right-[15%] right-0"
 				style={{ background: color }}
 			/>
 			{content === "text" && (
@@ -46,7 +46,7 @@ const Path = ({ params }: Props) => {
 				</h1>
 			)}
 			{content === "text" && (
-				<p className="row-start-2 text-xl col-start-2 lg:col-span-7 col-span-8 row-span-8 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">
+				<p className="row-start-2 overflow-scroll max-h-96 text-xl col-start-2 lg:col-span-7 col-span-8 row-span-8 lg:row-span-7 lg:row-start-3 lg:col-start-2 z-50">
 					{details}
 				</p>
 			)}
@@ -86,13 +86,14 @@ const Path = ({ params }: Props) => {
 					type="button"
 					title="Transcript"
 					onClick={() => setContent("text")}
-					className="text-slate-800 p-2 rounded-xl bg-[#F5F5F5] font-bold w-fit text-2xl text-center shadow-lg"
+					className={`z-50 transition-all duration-300 ease-in-out ${content === "text" ? "bg-[#00C5FF] shadow-lg scale-105" : "bg-[#F5F5F5] shadow-sm scale-100"} p-2 rounded-xl font-bold w-fit`}
 				>
 					<Image
 						priority
 						src="/icons/text.png"
 						width={56}
 						height={56}
+						className={`${content === "text" ? "invert" : ""}`}
 						alt="text icon"
 					/>
 				</button>
@@ -100,25 +101,27 @@ const Path = ({ params }: Props) => {
 					type="button"
 					title="Audio"
 					onClick={() => setContent("audio")}
-					className="text-slate-800 p-2 bg-[#F5F5F5] rounded-xl font-bold w-fit text-2xl text-center shadow-lg"
+					className={`z-50 transition-all duration-300 ease-in-out ${content === "audio" ? "bg-[#00C5FF] shadow-lg scale-105" : "bg-[#F5F5F5] shadow-sm scale-100"} p-2 rounded-xl font-bold w-fit`}
 				>
 					<Image
 						src="/icons/headphones.png"
 						width={56}
 						height={56}
+						className={`${content === "audio" ? "invert" : ""}`}
 						alt="headphone icon"
 					/>
 				</button>
 				<button
 					type="button"
-					title="Next Choice"
 					onClick={() => setContent("next")}
-					className="text-slate-800 p-2 bg-[#F5F5F5] rounded-xl font-bold w-fit text-2xl text-center shadow-lg"
+					title="Next Choice"
+					className={`z-50 transition-all duration-300 ease-in-out ${content === "next" ? "bg-[#00C5FF] shadow-lg scale-105" : "bg-[#F5F5F5] shadow-sm scale-100"} p-2 rounded-xl font-bold w-fit`}
 				>
 					<Image
 						src="/icons/next.png"
 						width={56}
 						height={56}
+						className={`${content === "next" ? "invert" : ""}`}
 						alt="next choice icon"
 					/>
 				</button>

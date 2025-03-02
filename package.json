@@ -10,7 +10,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@react-pdf/renderer": "^4.1.6",
+    "@react-pdf/renderer": "^4.2.1",
     "file-saver": "^2.0.5",
     "next": "14.2.22",
     "react": "^18",

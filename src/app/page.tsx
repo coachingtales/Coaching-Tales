@@ -43,6 +43,8 @@ export default function Home() {
 					width={400}
 					height={400}
 					className="w-[30vmin] rotate-[10deg] z-50"
+					loading="eager"
+					priority
 				/>
 			</div>
 			<button

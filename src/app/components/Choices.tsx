@@ -67,6 +67,7 @@ const Path = ({ params }: Props) => {
 								fill
 								style={{ objectFit: "cover" }}
 								className="rounded-xl object-top"
+								priority
 							/>
 						)}
 					</div>
